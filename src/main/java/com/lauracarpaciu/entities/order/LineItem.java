@@ -1,12 +1,13 @@
 package com.lauracarpaciu.entities.order;
 
+
 import com.lauracarpaciu.entities.data.BaseEntity;
 import com.lauracarpaciu.entities.product.Product;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-public class LineItem  extends BaseEntity implements Serializable{
+public class LineItem  extends BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

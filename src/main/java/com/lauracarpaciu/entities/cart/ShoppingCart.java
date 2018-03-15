@@ -79,9 +79,24 @@ public class ShoppingCart implements Serializable {
 
         return this;
     }
+
     public static Boolean isTerminal(CartEventType eventType) {
         return (eventType == CartEventType.CLEAR_CART || eventType == CartEventType.CHECKOUT);
     }
 
+    public double getTotal() {
+
+        double total = 0;
+        for (LineItem lc : lineItems) {
+
+            total += lc.getProduct().getUnitPrice() * lc.getQuantity();
+        }
+        return total;
+    }
+
+    public int getSize() {
+
+        return lineItems.size();
+    }
 
 }
