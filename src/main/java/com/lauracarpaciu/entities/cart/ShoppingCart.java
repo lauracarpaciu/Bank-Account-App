@@ -3,7 +3,6 @@ package com.lauracarpaciu.entities.cart;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lauracarpaciu.entities.catalog.Category;
-import com.lauracarpaciu.entities.product.Product;
 import reactor.core.publisher.Flux;
 
 import java.io.Serializable;
