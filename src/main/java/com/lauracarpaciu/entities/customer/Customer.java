@@ -19,6 +19,7 @@ public class Customer extends BaseEntity implements Serializable {
     private String email;
     private String tel;
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn
     private Account account;
 
     public Customer() {

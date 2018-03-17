@@ -8,12 +8,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "creditcards")
+@Table(name = "credit-cards")
 public class CreditCard extends BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String number;
+    @ManyToOne
+    @JoinColumn
     private BankAccount bankAccount=new CurrentAccount();
     @Enumerated(EnumType.STRING)
     private CreditCardType type;
