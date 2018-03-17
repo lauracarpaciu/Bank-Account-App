@@ -57,7 +57,6 @@ public abstract class Operation extends BaseEntity implements Serializable {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
-
     @JsonIgnore
     @XmlTransient
     public BankAccount getAccount() {
@@ -67,7 +66,6 @@ public abstract class Operation extends BaseEntity implements Serializable {
     public void setAccount(BankAccount account) {
         this.account = account;
     }
-
     @JsonIgnore
     @XmlTransient
     public Employee getEmployee() {

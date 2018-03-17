@@ -24,8 +24,8 @@ public class Category extends BaseEntity implements Serializable {
     private String description;
     @Lob
     private byte[] photo;
-    private String PhotoName;
-    @OneToMany(mappedBy = "categories")
+    private String photoName;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Collection<Product> products;
 
     public Category() {
@@ -37,7 +37,7 @@ public class Category extends BaseEntity implements Serializable {
         this.categoryName = categoryName;
         this.description = description;
         this.photo = photo;
-        PhotoName = photoName;
+        this.photoName = photoName;
     }
 
     public Long getCategoryId() {
@@ -71,15 +71,6 @@ public class Category extends BaseEntity implements Serializable {
     public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
-
-    public String getPhotoName() {
-        return PhotoName;
-    }
-
-    public void setPhotoName(String photoName) {
-        PhotoName = photoName;
-    }
-
     @JsonIgnore
     @XmlTransient
     public Collection<Product> getProducts() {
@@ -88,5 +79,13 @@ public class Category extends BaseEntity implements Serializable {
 
     public void setProducts(Collection<Product> products) {
         this.products = products;
+    }
+
+    public String getPhotoName() {
+        return photoName;
+    }
+
+    public void setPhotoName(String photoName) {
+        this.photoName = photoName;
     }
 }

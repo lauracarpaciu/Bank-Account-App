@@ -12,8 +12,8 @@ import java.util.Collection;
 public class Group implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long groupeNumber;
-    private String groupeName;
+    private Long groupNumber;
+    private String groupName;
     @ManyToMany
     private Collection<Employee> employees;
 
@@ -23,25 +23,24 @@ public class Group implements Serializable {
 
     public Group(String groupeName) {
         super();
-        this.groupeName = groupeName;
+        this.groupName = groupeName;
     }
 
     public Long getGroupeNumber() {
-        return groupeNumber;
+        return groupNumber;
     }
 
     public void setGroupeNumber(Long groupeNumber) {
-        this.groupeNumber = groupeNumber;
+        this.groupNumber = groupeNumber;
     }
 
     public String getGroupeName() {
-        return groupeName;
+        return groupName;
     }
 
     public void setGroupeName(String groupeName) {
-        this.groupeName = groupeName;
+        this.groupName = groupeName;
     }
-
     @JsonIgnore
     @XmlTransient
     public Collection<Employee> getEmployees() {

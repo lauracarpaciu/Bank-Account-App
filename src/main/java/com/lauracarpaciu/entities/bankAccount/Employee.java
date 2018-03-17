@@ -47,22 +47,19 @@ public class Employee implements Serializable {
         this.employeeName = employeeName;
     }
 
-    @JsonIgnore
+
     public Employee getEmployeeSup() {
         return employeeSup;
     }
 
-    @JsonSetter
     public void setEmployeeSup(Employee employeeSup) {
         this.employeeSup = employeeSup;
     }
-    @JsonIgnore
-    @XmlTransient
+
     public Collection<Group> getGroupes() {
         return groupes;
     }
 
-    @JsonSetter
     public void setGroupes(Collection<Group> groupes) {
         this.groupes = groupes;
     }

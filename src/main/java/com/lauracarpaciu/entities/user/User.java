@@ -23,6 +23,9 @@ public class User implements Serializable {
     private Long lastModified;
     private String password;
     private boolean actived;
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private Collection<Role> roles;
 
     public User(String userName, String firstName, String lastName, Long createdAt, Long lastModified, String password, boolean actived) {
         super();
@@ -35,9 +38,9 @@ public class User implements Serializable {
         this.actived = actived;
     }
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private Collection<Role> roles;
+
+    public User() {
+    }
 
     public Long getId() {
         return id;
@@ -103,16 +106,11 @@ public class User implements Serializable {
         this.actived = actived;
     }
 
-    @JsonIgnore
-    @XmlTransient
     public Collection<Role> getRoles() {
         return roles;
     }
 
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
-    }
-
-    public User() {
     }
 }

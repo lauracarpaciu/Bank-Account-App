@@ -26,7 +26,7 @@ public class ShoppingCart implements Serializable {
         this.category = category;
     }
 
-    @JsonIgnore
+
     public Map<String, Integer> getProductMap() {
         return productMap;
     }
@@ -35,7 +35,7 @@ public class ShoppingCart implements Serializable {
         this.productMap = productMap;
     }
 
-    @JsonIgnore
+
     public Category getCategory() {
         return category;
     }
