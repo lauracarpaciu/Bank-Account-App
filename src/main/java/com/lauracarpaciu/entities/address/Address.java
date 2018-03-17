@@ -1,13 +1,12 @@
 package com.lauracarpaciu.entities.address;
 
 import com.lauracarpaciu.entities.data.BaseEntity;
-
 import javax.persistence.*;
-import java.io.Serializable;
+
 
 @Entity
 @Table(name = "addresses")
-public class Address extends BaseEntity implements Serializable{
+public class Address extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

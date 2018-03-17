@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "customers")
-public class Customer extends BaseEntity implements Serializable {
+public class Customer extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,7 +19,7 @@ public class Customer extends BaseEntity implements Serializable {
     private String email;
     private String tel;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn
+    @JoinColumn(name="accountId")
     private Account account;
 
     public Customer() {

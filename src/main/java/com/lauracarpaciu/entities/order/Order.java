@@ -1,21 +1,23 @@
 package com.lauracarpaciu.entities.order;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lauracarpaciu.entities.account.Account;
 import com.lauracarpaciu.entities.address.Address;
 import com.lauracarpaciu.entities.data.BaseEntity;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
 @Table(name = "orders")
-public class Order extends BaseEntity implements Serializable {
+public class Order extends BaseEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
     private OrderStatus orderStatus;
-    @OneToMany(mappedBy = "orderS")
+    @OneToMany(mappedBy = "orders",fetch = FetchType.EAGER)
     private Collection<LineItem> lineItems;
     @ManyToOne
     @JoinColumn(name = "addressId")
@@ -39,7 +41,8 @@ public class Order extends BaseEntity implements Serializable {
     public void setOrderStatus(OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
     }
-
+    @JsonIgnore
+    @XmlTransient
     public Collection<LineItem> getLineItems() {
         return lineItems;
     }

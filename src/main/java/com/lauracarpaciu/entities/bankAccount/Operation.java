@@ -19,16 +19,16 @@ import java.util.Date;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({@JsonSubTypes.Type(name = "V", value = Payment.class),
         @JsonSubTypes.Type(name = "R", value = Withdrawal.class)})
-public abstract class Operation extends BaseEntity implements Serializable {
+public abstract class Operation extends BaseEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long operationNumber;
     private BigDecimal amount;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name="bankAccountId")
     private BankAccount account;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name="employeeId")
     private Employee employee;
 
     public Operation() {

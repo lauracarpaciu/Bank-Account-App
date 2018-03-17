@@ -10,12 +10,11 @@ import com.lauracarpaciu.entities.order.Order;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
 @Table(name = "accounts")
-public class Account extends BaseEntity implements Serializable {
+public class Account extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

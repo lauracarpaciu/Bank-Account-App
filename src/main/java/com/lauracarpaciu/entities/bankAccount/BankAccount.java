@@ -18,15 +18,15 @@ import java.util.Collection;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({@JsonSubTypes.Type(name = "CC", value = CurrentAccount.class), @JsonSubTypes.Type(name = "SC", value = SavingAccount.class)})
 @XmlSeeAlso({CurrentAccount.class, SavingAccount.class})
-public abstract class BankAccount extends BaseEntity implements Serializable {
+public abstract class BankAccount extends BaseEntity  {
     @Id
     private String accountName;
     private double balance;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name="customerId")
     private Customer customer;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name="employeeId")
     private Employee employee;
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private Collection<Operation> operations;

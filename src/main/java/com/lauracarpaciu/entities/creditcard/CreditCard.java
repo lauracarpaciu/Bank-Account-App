@@ -9,13 +9,13 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "credit-cards")
-public class CreditCard extends BaseEntity implements Serializable {
+public class CreditCard extends BaseEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String number;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name="bankAccountId")
     private BankAccount bankAccount=new CurrentAccount();
     @Enumerated(EnumType.STRING)
     private CreditCardType type;

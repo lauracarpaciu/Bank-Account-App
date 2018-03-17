@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "products")
-public class Product extends BaseEntity implements Serializable {
+public class Product extends BaseEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;

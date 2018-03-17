@@ -1,6 +1,7 @@
 package com.lauracarpaciu.entities.bankAccount;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.lauracarpaciu.entities.data.BaseEntity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlTransient;
@@ -9,7 +10,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "groups")
-public class Group implements Serializable {
+public class Group extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long groupNumber;

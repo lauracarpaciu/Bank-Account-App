@@ -2,6 +2,7 @@ package com.lauracarpaciu.entities.bankAccount;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import com.lauracarpaciu.entities.data.BaseEntity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlTransient;
@@ -10,16 +11,16 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "employees")
-public class Employee implements Serializable {
+public class Employee extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long employeeCode;
     private String employeeName;
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name="employeeSupId")
     private Employee employeeSup;
     @ManyToMany
-    @JoinColumn
+    @JoinColumn(name="groupId")
     private Collection<Group> groupes;
 
     public Employee() {

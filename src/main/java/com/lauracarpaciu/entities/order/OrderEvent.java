@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 @Entity
 @Table(name="orderEvens")
-public class OrderEvent extends BaseEntity implements Serializable {
+public class OrderEvent extends BaseEntity{
     @Id
     private String id;
     private OrderEventType type;

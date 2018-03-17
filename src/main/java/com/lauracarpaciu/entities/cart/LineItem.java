@@ -3,16 +3,16 @@ package com.lauracarpaciu.entities.cart;
 import com.lauracarpaciu.entities.data.BaseEntity;
 import com.lauracarpaciu.entities.product.Product;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "line-items")
-public class LineItem extends BaseEntity implements Serializable {
+public class LineItem extends BaseEntity  {
     @Id
     private String productId;
+    @ManyToOne
+    @JoinColumn(name = "productId")
     private Product product;
     private Integer quantity;
 

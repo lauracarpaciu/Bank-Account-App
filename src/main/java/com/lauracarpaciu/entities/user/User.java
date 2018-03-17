@@ -1,6 +1,7 @@
 package com.lauracarpaciu.entities.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.lauracarpaciu.entities.data.BaseEntity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlTransient;
@@ -10,7 +11,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "users")
-public class User implements Serializable {
+public class User extends BaseEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -19,12 +20,9 @@ public class User implements Serializable {
     private String userName;
     private String firstName;
     private String lastName;
-    private Long createdAt;
-    private Long lastModified;
     private String password;
     private boolean actived;
-    @OneToMany
-    @JoinColumn(name = "user_id")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private Collection<Role> roles;
 
     public User(String userName, String firstName, String lastName, Long createdAt, Long lastModified, String password, boolean actived) {
@@ -32,8 +30,6 @@ public class User implements Serializable {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.createdAt = createdAt;
-        this.lastModified = lastModified;
         this.password = password;
         this.actived = actived;
     }
@@ -74,22 +70,6 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
-    public Long getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Long createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Long getLastModified() {
-        return lastModified;
-    }
-
-    public void setLastModified(Long lastModified) {
-        this.lastModified = lastModified;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -105,7 +85,8 @@ public class User implements Serializable {
     public void setActived(boolean actived) {
         this.actived = actived;
     }
-
+    @JsonIgnore
+    @XmlTransient
     public Collection<Role> getRoles() {
         return roles;
     }

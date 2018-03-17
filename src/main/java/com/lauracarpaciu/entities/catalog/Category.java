@@ -13,7 +13,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "categories")
-public class Category extends BaseEntity implements Serializable {
+public class Category extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;

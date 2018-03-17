@@ -36,6 +36,7 @@ public class BaseEntity {
     }
 
     public BaseEntity() {
+        super();
     }
 
     public BaseEntity(Long createdAt, Long lastModified) {
