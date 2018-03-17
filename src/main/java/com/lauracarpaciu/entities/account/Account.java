@@ -26,9 +26,9 @@ public class Account extends BaseEntity implements Serializable {
     private Collection<CreditCard> creditCards;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Collection<BankAccount> bankAccounts;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private Collection<Address> addresses;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private Collection<Order> orders;
 
     public Account() {
@@ -80,7 +80,6 @@ public class Account extends BaseEntity implements Serializable {
     public void setDefaultAccount(Boolean defaultAccount) {
         this.defaultAccount = defaultAccount;
     }
-
     @JsonIgnore
     @XmlTransient
     public Collection<CreditCard> getCreditCards() {
@@ -90,7 +89,6 @@ public class Account extends BaseEntity implements Serializable {
     public void setCreditCards(Collection<CreditCard> creditCards) {
         this.creditCards = creditCards;
     }
-
     @JsonIgnore
     @XmlTransient
     public Collection<BankAccount> getBankAccounts() {
@@ -100,7 +98,6 @@ public class Account extends BaseEntity implements Serializable {
     public void setBankAccounts(Collection<BankAccount> bankAccounts) {
         this.bankAccounts = bankAccounts;
     }
-
     @JsonIgnore
     @XmlTransient
     public Collection<Address> getAddresses() {
