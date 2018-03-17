@@ -112,4 +112,14 @@ public class Product extends BaseEntity  {
         this.photo = photo;
         this.quantity = quantity;
     }
+
+    public Product(String designation, String description, double unitPrice, boolean selected, String photo, int quantity, Category category) {
+        this.designation = designation;
+        this.description = description;
+        this.unitPrice = unitPrice;
+        this.selected = selected;
+        this.photo = photo;
+        this.quantity = quantity;
+        this.category = category;
+    }
 }

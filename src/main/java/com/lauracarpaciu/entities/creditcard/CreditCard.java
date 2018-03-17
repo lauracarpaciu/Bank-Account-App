@@ -14,11 +14,26 @@ public class CreditCard extends BaseEntity  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String number;
+
+    public CurrentAccount getCurrentAccount() {
+        return currentAccount;
+    }
+
+    public void setCurrentAccount(CurrentAccount currentAccount) {
+        this.currentAccount = currentAccount;
+    }
+
     @ManyToOne
     @JoinColumn(name="bankAccountId")
-    private BankAccount bankAccount=new CurrentAccount();
+    private CurrentAccount currentAccount;
     @Enumerated(EnumType.STRING)
     private CreditCardType type;
+
+    public CreditCard(String number, CurrentAccount currentAccount) {
+    }
+
+    public CreditCard(String number, CurrentAccount bankAccount, CreditCardType type) {
+    }
 
     public Long getId() {
         return id;
@@ -36,13 +51,7 @@ public class CreditCard extends BaseEntity  {
         this.number = number;
     }
 
-    public BankAccount getBankAccount() {
-        return bankAccount;
-    }
 
-    public void setBankAccount(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
-    }
 
     public CreditCardType getType() {
         return type;
@@ -55,5 +64,10 @@ public class CreditCard extends BaseEntity  {
     public CreditCard() {
     }
 
-
+    public CreditCard(Long createdAt, Long lastModified, String number, CurrentAccount currentAccount, CreditCardType type) {
+        super(createdAt, lastModified);
+        this.number = number;
+        this.currentAccount = currentAccount;
+        this.type = type;
+    }
 }

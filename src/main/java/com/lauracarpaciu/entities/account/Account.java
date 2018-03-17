@@ -39,6 +39,11 @@ public class Account extends BaseEntity {
         this.accountNumber = accountNumber;
     }
 
+    public Account(String userId, String accountNumber) {
+        this.userId = userId;
+        this.accountNumber = accountNumber;
+    }
+
     @JsonIgnore
     @XmlTransient
     public Collection<Order> getOrders() {
