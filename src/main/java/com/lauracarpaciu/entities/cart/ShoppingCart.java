@@ -14,12 +14,7 @@ import java.util.stream.Stream;
 public class ShoppingCart implements Serializable {
     private Logger log = Logger.getLogger(String.valueOf(ShoppingCart.class));
     private Map<String, Integer> productMap = new HashMap<>();
-
-    public void setLineItems(List<LineItem> lineItems) {
-        this.lineItems = lineItems;
-    }
-
-    private List<LineItem> lineItems = new ArrayList<>();
+    private Collection<LineItem> lineItems = new ArrayList<>();
     private Category category;
 
     public ShoppingCart(Category category) {
@@ -43,8 +38,11 @@ public class ShoppingCart implements Serializable {
     public void setCategory(Category category) {
         this.category = category;
     }
+    public void setLineItems(Collection<LineItem> lineItems) {
+        this.lineItems = lineItems;
+    }
 
-    public List<LineItem> getLineItems() throws Exception {
+    public Collection<LineItem> getLineItems() throws Exception {
         lineItems = productMap.entrySet()
                 .stream()
                 .map(item -> new LineItem(item.getKey(), category.getProducts().stream()
