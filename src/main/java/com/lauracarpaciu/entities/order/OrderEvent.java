@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 @Entity
-@Table(name="orderEvens")
+@Table(name="orderEvents")
 public class OrderEvent extends BaseEntity{
     @Id
     private String id;

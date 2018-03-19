@@ -3,10 +3,9 @@ package com.lauracarpaciu.entities.product;
 import com.lauracarpaciu.entities.catalog.Category;
 import com.lauracarpaciu.entities.data.BaseEntity;
 import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
+
 
 
 @Entity

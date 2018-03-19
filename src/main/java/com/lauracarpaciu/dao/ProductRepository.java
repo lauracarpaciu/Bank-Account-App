@@ -1,6 +1,6 @@
-package com.lauracarpaciu.dao.catalog;
+package com.lauracarpaciu.dao;
 
-import com.lauracarpaciu.entities.bankAccount.BankAccount;
+
 import com.lauracarpaciu.entities.product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
