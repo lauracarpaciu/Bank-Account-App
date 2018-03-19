@@ -23,7 +23,7 @@ public abstract class Operation extends BaseEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long operationNumber;
-    private BigDecimal amount;
+    private double amount;
     @ManyToOne
     @JoinColumn(name="bankAccountId")
     private BankAccount account;
@@ -35,7 +35,7 @@ public abstract class Operation extends BaseEntity  {
         super();
     }
 
-    public Operation(Date dateOperation, BigDecimal amount) {
+    public Operation(Date dateOperation, double amount) {
         super();
         this.amount = amount;
     }
@@ -50,11 +50,11 @@ public abstract class Operation extends BaseEntity  {
 
 
 
-    public BigDecimal getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
     @JsonIgnore
