@@ -1,4 +1,4 @@
-package com.lauracarpaciu.service.catalog;
+package com.lauracarpaciu.service;
 
 import com.lauracarpaciu.entities.cart.ShoppingCart;
 import com.lauracarpaciu.entities.catalog.Category;

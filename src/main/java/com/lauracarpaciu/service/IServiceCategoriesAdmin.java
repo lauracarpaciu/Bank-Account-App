@@ -1,4 +1,4 @@
-package com.lauracarpaciu.service.catalog;
+package com.lauracarpaciu.service;
 
 
 import com.lauracarpaciu.entities.catalog.Category;
@@ -15,6 +15,7 @@ public interface IServiceCategoriesAdmin extends IServiceProductsAdmin {
     void addUser(User u);
 
     void addRole(Role r, Long userID);
+    User getUserByUsername(String username);
 
 
 }
