@@ -13,8 +13,8 @@ import java.util.Collection;
 @Table(name = "orders")
 public class Order extends BaseEntity  {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderId;
+
+    private String orderId;
     private OrderStatus orderStatus;
     @OneToMany(mappedBy = "orders",fetch = FetchType.EAGER)
     private Collection<LineItem> lineItems;
@@ -25,11 +25,11 @@ public class Order extends BaseEntity  {
     @JoinColumn(name = "accountId")
     private Account account;
 
-    public Long getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Long orderId) {
+    public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 
