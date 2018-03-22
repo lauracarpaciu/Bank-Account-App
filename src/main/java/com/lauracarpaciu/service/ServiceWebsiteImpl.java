@@ -1,11 +1,15 @@
-package com.lauracarpaciu.service.catalog;
+package com.lauracarpaciu.service;
 
 import com.lauracarpaciu.dao.*;
-import com.lauracarpaciu.dao.catalog.IDAOWebsite;
-import com.lauracarpaciu.entities.*;
 
+
+import com.lauracarpaciu.entities.cart.ShoppingCart;
 import com.lauracarpaciu.entities.catalog.Category;
+import com.lauracarpaciu.entities.customer.Customer;
+import com.lauracarpaciu.entities.order.Order;
 import com.lauracarpaciu.entities.product.Product;
+import com.lauracarpaciu.entities.user.Role;
+import com.lauracarpaciu.entities.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +19,8 @@ import java.util.List;
 @Transactional
 @Service
 public class ServiceWebsiteImpl implements IServiceCategoriesAdmin {
-
+    @Autowired
+    private UserRepository userRepository;
     @Autowired
     private CategoryRepository categoryRepository;
     @Autowired
@@ -29,28 +34,34 @@ public class ServiceWebsiteImpl implements IServiceCategoriesAdmin {
 
     @Override
     public void deleteCategory(Long idcat) {
-       categoryRepository.delete(idcat);
+        categoryRepository.delete(idcat);
 
     }
 
     @Override
     public void changeCategory(Category c) {
-       categoryRepository.;
+        categoryRepository.;
 
     }
 
     @Override
     public void addUser(User u) {
-        dao.addUser(u);
+        userRepository.save(u);
 
 
     }
 
     @Override
     public void addRole(Role r, Long userID) {
-        dao.addRole(r, userID);
+        userRepository.save(r, userID);
 
     }
+
+    @Override
+    public User getUserByUsername(String username) {
+        return userRepository.findUserByUsername(username);
+    }
+
 
     @Override
     public Product addProduct(Product p) {
@@ -59,7 +70,7 @@ public class ServiceWebsiteImpl implements IServiceCategoriesAdmin {
 
     @Override
     public void deleteProduct(Long idP) {
-       productRepository.delete(idP);
+        productRepository.delete(idP);
 
 
     }
@@ -103,6 +114,11 @@ public class ServiceWebsiteImpl implements IServiceCategoriesAdmin {
     @Override
     public Product getProduct(Long idP) {
         return dao.getProduct(idP);
+    }
+
+    @Override
+    public Order addOrder(ShoppingCart cart, Customer c) {
+        return null;
     }
 
     @Override
