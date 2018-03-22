@@ -3,7 +3,14 @@ package com.lauracarpaciu.controller;
 import com.lauracarpaciu.service.OperationService;
 import com.lauracarpaciu.service.PageOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Optional;
 
 @RestController
 public class OperationController {
@@ -11,20 +18,26 @@ public class OperationController {
     @Autowired
     private OperationService operationService;
 
-
-    public boolean pay(String accountName, double amount, Long employeeCode) {
-        return operationService.pay(accountName, amount, employeeCode);
+    @RequestMapping(value = "/operations", method = RequestMethod.GET)
+    public ResponseEntity getOperationService(@RequestParam String codCont, @RequestParam int page, @RequestParam int size) throws Exception {
+        return Optional.ofNullable(operationService.getOperation(codCont, page, size))
+                .map(a -> new ResponseEntity<PageOperation>(a, HttpStatus.OK))
+                .orElseThrow(() -> new Exception("Not found"));
     }
 
-    public boolean withdrawal(String accountName, double amount, Long employeeCode) {
-        return operationService.withdrawal(accountName, amount, employeeCode);
+
+    @RequestMapping(value = "/payment", method = RequestMethod.PUT)
+    public boolean pay(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) {
+        return operationService.pay(code, amount, employeeCode);
     }
 
-    public boolean virament(String account1, String account2, double amount, Long employeeCode) {
+    @RequestMapping(value = "/withdrawal", method = RequestMethod.PUT)
+    public boolean retire(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) {
+        return operationService.withdrawal(code, amount, employeeCode);
+    }
+
+    @RequestMapping(value = "/virament", method = RequestMethod.PUT)
+    public boolean virament(@RequestParam String account1, @RequestParam String account2, @RequestParam double amount, @RequestParam Long employeeCode) {
         return operationService.virament(account1, account2, amount, employeeCode);
-    }
-
-    public PageOperation getOperation(String codCont, int page, int size) {
-        return operationService.getOperation(codCont, page, size);
     }
 }

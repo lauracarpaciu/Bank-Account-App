@@ -1,6 +1,5 @@
 package com.lauracarpaciu.controller;
 
-import com.lauracarpaciu.entities.account.Account;
 import com.lauracarpaciu.entities.bankAccount.Employee;
 import com.lauracarpaciu.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
