@@ -1,13 +1,12 @@
 package com.lauracarpaciu.service;
 
 import com.lauracarpaciu.dao.BankAccountRepository;
-import com.lauracarpaciu.entities.account.Account;
 import com.lauracarpaciu.entities.bankAccount.BankAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BanckAccountServiceImpl implements BanckAccountService {
+public class BankAccountServiceImpl implements BankAccountService {
     @Autowired
     private BankAccountRepository accountRepository;
 
