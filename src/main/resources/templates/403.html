@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Banca</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/css/bootstrap.min.css}"/>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href=".../static/css/style.css"
+          th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="col-md-6 col-md-offest-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Authorisation problems</div>
+            <div class="panel-body">
+                <div class="red">Access Denied</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
