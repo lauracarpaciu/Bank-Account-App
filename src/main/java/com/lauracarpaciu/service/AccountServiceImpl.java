@@ -24,7 +24,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public List<Account> getUserAccounts() {
         List<Account> accounts = null;
-        User user = oAuth2RestTemplate.getForObject("http://user-service/uaa/v1/me", User.class);
+        User user = oAuth2RestTemplate.getForObject("http://gestiune/users/name",User.class);
         if (user != null) {
             accounts = accountRepository.findAccountsByUserId(user.getUserName());
 

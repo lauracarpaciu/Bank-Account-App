@@ -13,6 +13,7 @@ import java.security.Principal;
 import java.util.Optional;
 
 @RestController
+@RequestMapping(path = "/users")
 public class UserController {
     @Autowired
     private UserService userService;
