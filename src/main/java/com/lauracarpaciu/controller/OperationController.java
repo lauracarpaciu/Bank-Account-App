@@ -27,17 +27,17 @@ public class OperationController {
 
 
     @RequestMapping(value = "/payment", method = RequestMethod.PUT)
-    public ResponseEntity pay(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) throws Exception{
-        return Optional.ofNullable(operationService.pay(code, amount, employeeCode)).map(a-> new ResponseEntity<>(a,HttpStatus.OK)).orElseThrow(()->new Exception("Not found"));
+    public ResponseEntity pay(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) throws Exception {
+        return Optional.ofNullable(operationService.pay(code, amount, employeeCode)).map(a -> new ResponseEntity<>(a, HttpStatus.OK)).orElseThrow(() -> new Exception("Not found"));
     }
 
     @RequestMapping(value = "/withdrawal", method = RequestMethod.PUT)
-    public boolean retire(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) {
-        return operationService.withdrawal(code, amount, employeeCode);
+    public ResponseEntity<Boolean> retire(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) throws Exception {
+        return Optional.ofNullable(operationService.withdrawal(code, amount, employeeCode)).map(a -> new ResponseEntity<>(a, HttpStatus.OK)).orElseThrow(() -> new Exception("Not found"));
     }
 
     @RequestMapping(value = "/virament", method = RequestMethod.PUT)
-    public boolean virament(@RequestParam String account1, @RequestParam String account2, @RequestParam double amount, @RequestParam Long employeeCode) {
-        return operationService.virament(account1, account2, amount, employeeCode);
+    public ResponseEntity virament(@RequestParam String account1, @RequestParam String account2, @RequestParam double amount, @RequestParam Long employeeCode) throws Exception {
+        return Optional.ofNullable(operationService.virament(account1, account2, amount, employeeCode)).map(a -> new ResponseEntity<>(a, HttpStatus.OK)).orElseThrow(() -> new Exception("Not found"));
     }
 }
