@@ -17,8 +17,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    public Employee saveEmployee(Employee e) {
-        return employeeService.saveEmployee(e);
+    @RequestMapping(value = "/employes", method = RequestMethod.POST)
+    public ResponseEntity<Employee> saveEmployee(Employee e) throws Exception {
+        return Optional.ofNullable(employeeService.saveEmployee(e))
+                .map(a -> new ResponseEntity<Employee>(a, HttpStatus.OK))
+                .orElseThrow(() -> new Exception("Not found"));
     }
 
 
