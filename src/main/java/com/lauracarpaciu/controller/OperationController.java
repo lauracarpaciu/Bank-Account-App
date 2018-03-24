@@ -27,8 +27,8 @@ public class OperationController {
 
 
     @RequestMapping(value = "/payment", method = RequestMethod.PUT)
-    public boolean pay(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) {
-        return operationService.pay(code, amount, employeeCode);
+    public ResponseEntity pay(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) throws Exception{
+        return Optional.ofNullable(operationService.pay(code, amount, employeeCode)).map(a-> new ResponseEntity<>(a,HttpStatus.OK)).orElseThrow(()->new Exception("Not found"));
     }
 
     @RequestMapping(value = "/withdrawal", method = RequestMethod.PUT)
