@@ -10,6 +10,7 @@ import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.stereotype.Service;
 
 
+
 import java.util.List;
 
 @Service
@@ -35,4 +36,7 @@ public class AccountServiceImpl implements AccountService {
             return accounts;
 
     }
+
+
+
 }

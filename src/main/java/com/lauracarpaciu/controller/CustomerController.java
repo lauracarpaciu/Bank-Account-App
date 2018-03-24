@@ -1,4 +1,5 @@
 package com.lauracarpaciu.controller;
+
 import com.lauracarpaciu.entities.customer.Customer;
 import com.lauracarpaciu.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,12 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    public Customer saveCustomer(Customer c) {
-        return customerService.saveCustomer(c);
+    @RequestMapping(value = "/customers", method = RequestMethod.POST)
+    public ResponseEntity<Customer> saveCustomer(Customer c) throws Exception {
+        return Optional.ofNullable(customerService.saveCustomer(c))
+                .map(a -> new ResponseEntity<Customer>(a, HttpStatus.OK))
+                .orElseThrow(() -> new Exception("Not found"));
+
     }
 
     @RequestMapping(value = "/customers", method = RequestMethod.GET)
