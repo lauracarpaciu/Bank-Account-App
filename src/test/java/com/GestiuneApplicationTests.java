@@ -7,9 +7,12 @@ import com.lauracarpaciu.entities.account.Account;
 import com.lauracarpaciu.entities.address.Address;
 import com.lauracarpaciu.entities.address.AddressType;
 import com.lauracarpaciu.entities.bankAccount.*;
+import com.lauracarpaciu.entities.catalog.Category;
 import com.lauracarpaciu.entities.creditcard.CreditCard;
 import com.lauracarpaciu.entities.creditcard.CreditCardType;
 import com.lauracarpaciu.entities.customer.Customer;
+import com.lauracarpaciu.entities.product.Product;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -89,145 +92,148 @@ public class GestiuneApplicationTests {
     }
 
 
-//    @Test
-//    public void test11() {
-//        try {
-//
-//            List<Customer> cts1 = customerRepository.findAll();
-//            assertTrue(cts1.isEmpty());
-//        } catch (Exception e) {
-//            assertTrue(e.getMessage(), false);
-//        }
-//    }
-//
-//
-//    @Test
-//    public void test21() {
-//        try {
-//
-//            List<Employee> cts1 = employeeRepository.findAll();
-//            assertTrue(cts1.isEmpty());
-//        } catch (Exception e) {
-//            assertTrue(e.getMessage(), false);
-//        }
-//    }
-//
-//
-//    @Test
-//    public void test22() {
-//        try {
-//            List<Employee> cts1 = employeeRepository.findAll();
-//            employeeRepository.save(new Employee("E1"));
-//            employeeRepository.save(new Employee("E2"));
-//            employeeRepository.save(new Employee("E3"));
-//            List<Employee> cts2 = employeeRepository.findAll();
-//            assertTrue(cts1.size() + 3 == cts2.size());
-//        } catch (Exception e) {
-//            assertTrue(e.getMessage(), false);
-//        }
-//    }
-//
-//    @Test
-//    public void test31() {
-//        try {
-//
-//            List<Group> cts1 = groupRepository.findAll();
-//            assertTrue(cts1.isEmpty());
-//        } catch (Exception e) {
-//            assertTrue(e.getMessage(), false);
-//        }
-//    }
-//
-//    @Test
-//    public void test32() {
-//        try {
-//            List<Group> cts1 = groupRepository.findAll();
-//            groupRepository.save(new Group("G1"));
-//            groupRepository.save(new Group("G2"));
-//            groupRepository.save(new Group("G3"));
-//            List<Group> cts2 = groupRepository.findAll();
-//            assertTrue(cts1.size() + 3 == cts2.size());
-//        } catch (Exception e) {
-//            assertTrue(e.getMessage(), false);
-//        }
-//    }
-//
-//    @Test
-//    public void test41() {
-//        try {
-//            List<Account> cts1 = account.findAll();
-//            assertTrue(cts1.isEmpty());
-//        } catch (Exception e) {
-//            assertTrue(e.getMessage(), false);
-//        }
-//    }
-//
-//    @Test
-//    public void test42() {
-//        try {
-//            List<BankAccount> cts1 = bankAccountRepository.findAll();
-//            bankAccountRepository.save(new CurrentAccount("CC1", 800, 20));
-//            bankAccountRepository.save(new SavingAccount("SC1", 600, 7.5));
-//            List<Account> cts2 = account.findAll();
-//            assertTrue(cts1.size() + 2 == cts2.size());
-//        } catch (Exception e) {
-//            assertTrue(e.getMessage(), false);
-//        }
-//    }
-//
-//
-//    @Test
-//    public void test51() {
-//        try {
-//
-//            List<Operation> cts1 = operationRepository.findAll();
-//            assertTrue(cts1.isEmpty());
-//        } catch (Exception e) {
-//            assertTrue(e.getMessage(), false);
-//        }
-//    }
-//
-//    @Test
-//    public void test52() {
-//        try {
-//
-//            List<Operation> cts1 = operationRepository.findAll();
-//            operationRepository.save(new Payment());
-//            operationRepository.save(new Withdrawal());
-//            List<Operation> cts2 = operationRepository.findAll();
-//            assertTrue(cts1.size() + 2 == cts2.size());
-//        } catch (Exception e) {
-//            assertTrue(e.getMessage(), false);
-//        }
-//
-//    }
-//
-//    @Test
-//    public void test1() {
-//        try {
-//
-//            List<Category> cts1 = categoryRepository.findAll();
-//            categoryRepository.save(new Category("laptop", "lapppppppp", null, "image1.jsp"));
-//            categoryRepository.save(new Category("Imprimantes", "imppppppppp", null, "image2.jsp"));
-//            List<Category> cts2 = categoryRepository.findAll();
-//            Assert.assertTrue(cts1.size() + 2 == cts2.size());
-//        } catch (Exception e) {
-//            Assert.assertTrue(e.getMessage(), false);
-//        }
-//    }
-//
-//    @Test
-//    public void test2() {
-//        try {
-//
-//            List<Product> cts1 = productRepository.findAll();
-//            productRepository.save(new Product("Imprimanta", "Imprimanta", 5000.00, false, null, 1, new Category()));
-//            productRepository.save(new Product("Imprimanta", "Imprimanta", 5000.00, false, null, 1, new Category()));
-//            List<Product> cts2 = productRepository.findAll();
-//            Assert.assertTrue(cts1.size() + 2 == cts2.size());
-//        } catch (Exception e) {
-//            Assert.assertTrue(e.getMessage(), false);
-//        }
-//    }
+    @Test
+    public void test11() {
+        try {
+
+            List<Customer> cts1 = customerRepository.findAll();
+            assertTrue(cts1.isEmpty());
+        } catch (Exception e) {
+            assertTrue(e.getMessage(), false);
+        }
+    }
+
+
+    @Test
+    public void test21() {
+        try {
+
+            List<Employee> cts1 = employeeRepository.findAll();
+            assertTrue(cts1.isEmpty());
+        } catch (Exception e) {
+            assertTrue(e.getMessage(), false);
+        }
+    }
+
+
+    @Test
+    public void test22() {
+        try {
+            List<Employee> cts1 = employeeRepository.findAll();
+            employeeRepository.save(new Employee("E1"));
+            employeeRepository.save(new Employee("E2"));
+            employeeRepository.save(new Employee("E3"));
+            List<Employee> cts2 = employeeRepository.findAll();
+            assertTrue(cts1.size() + 3 == cts2.size());
+        } catch (Exception e) {
+            assertTrue(e.getMessage(), false);
+        }
+    }
+
+    @Test
+    public void test31() {
+        try {
+
+            List<Group> cts1 = groupRepository.findAll();
+            assertTrue(cts1.isEmpty());
+        } catch (Exception e) {
+            assertTrue(e.getMessage(), false);
+        }
+    }
+
+    @Test
+    public void test32() {
+        try {
+            List<Group> cts1 = groupRepository.findAll();
+            groupRepository.save(new Group("G1"));
+            groupRepository.save(new Group("G2"));
+            groupRepository.save(new Group("G3"));
+            List<Group> cts2 = groupRepository.findAll();
+            assertTrue(cts1.size() + 3 == cts2.size());
+        } catch (Exception e) {
+            assertTrue(e.getMessage(), false);
+        }
+    }
+
+    @Test
+    public void test41() {
+        try {
+            List<Account> cts1 = account.findAll();
+            assertTrue(cts1.isEmpty());
+        } catch (Exception e) {
+            assertTrue(e.getMessage(), false);
+        }
+    }
+
+    @Test
+    public void test42() {
+        try {
+            List<BankAccount> cts1 = bankAccountRepository.findAll();
+            bankAccountRepository.save(new CurrentAccount("CC1", 800, 20));
+            bankAccountRepository.save(new SavingAccount("SC1", 600, 7.5));
+            List<Account> cts2 = account.findAll();
+            assertTrue(cts1.size() + 2 == cts2.size());
+        } catch (Exception e) {
+            assertTrue(e.getMessage(), false);
+        }
+    }
+
+
+    @Test
+    public void test51() {
+        try {
+
+            List<Operation> cts1 = operationRepository.findAll();
+            assertTrue(cts1.isEmpty());
+        } catch (Exception e) {
+            assertTrue(e.getMessage(), false);
+        }
+    }
+
+    @Test
+    public void test52() {
+        try {
+
+            List<Operation> cts1 = operationRepository.findAll();
+            operationRepository.save(new Payment());
+            operationRepository.save(new Withdrawal());
+            List<Operation> cts2 = operationRepository.findAll();
+            assertTrue(cts1.size() + 2 == cts2.size());
+        } catch (Exception e) {
+            assertTrue(e.getMessage(), false);
+        }
+
+    }
+
+    @Test
+    public void test1() {
+        try {
+
+            List<Category> cts1 = categoryRepository.findAll();
+            categoryRepository.save(new Category("laptop", "lapppppppp", null, "image1.jsp"));
+            categoryRepository.save(new Category("Imprimantes", "imppppppppp", null, "image2.jsp"));
+            List<Category> cts2 = categoryRepository.findAll();
+            Assert.assertTrue(cts1.size() + 2 == cts2.size());
+        } catch (Exception e) {
+            Assert.assertTrue(e.getMessage(), false);
+        }
+    }
+
+    @Test
+    public void test2() {
+        try {
+
+            List<Product> cts1 = productRepository.findAll();
+            productRepository.save(new Product("Imprimanta", "Imprimanta", 5000.00, false, null, 1, new Category()));
+            productRepository.save(new Product("Imprimanta", "Imprimanta", 5000.00, false, null, 1, new Category()));
+            List<Product> cts2 = productRepository.findAll();
+            Assert.assertTrue(cts1.size() + 2 == cts2.size());
+        } catch (Exception e) {
+            Assert.assertTrue(e.getMessage(), false);
+        }
+    }
+
+
+
 
 }
