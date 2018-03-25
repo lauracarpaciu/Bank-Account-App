@@ -1,6 +1,7 @@
 package com.lauracarpaciu.service;
 
 import com.lauracarpaciu.dao.CartEventRepository;
+import com.lauracarpaciu.dao.CategoryRepository;
 import com.lauracarpaciu.dao.UserRepository;
 import com.lauracarpaciu.entities.cart.CartEvent;
 import com.lauracarpaciu.entities.cart.ShoppingCart;
@@ -14,6 +15,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     private UserRepository userRepository;
     @Autowired
     private CartEventRepository cartEventRepository;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     @Override
     public User getAuthenticatedUser(String userName) {
@@ -44,13 +48,16 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         return true;
     }
 
-    @Override
-    public ShoppingCart getShoppingCart() {
-        return null;
-    }
+//    @Override
+//    public ShoppingCart getShoppingCart(String userName, Long categoryId) {
+//        User user = userRepository.findOne(userName);
+//        ShoppingCart shoppingCart = null;
+//        if (user != null) {
+//            Category category = categoryRepository.findOne(categoryId);
+//            shoppingCart = aggregateCartEvents(user,category);
+//        }
+//        return shoppingCart;
+//    }
 
-    @Override
-    public ShoppingCart aggregateCartEvents(User user, Category category) {
-        return null;
-    }
+
 }

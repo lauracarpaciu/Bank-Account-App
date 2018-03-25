@@ -1,7 +1,5 @@
 package com.lauracarpaciu.entities.cart;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lauracarpaciu.entities.catalog.Category;
 import reactor.core.publisher.Flux;
 
@@ -95,5 +93,6 @@ public class ShoppingCart implements Serializable {
 
         return lineItems.size();
     }
+
 
 }
