@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface CartEventRepository extends JpaRepository<CaretEvent,Long> {
     List<CartEvent>getCartEventbyUser(Long userId);
+
+    void save(CartEvent cartEvent);
 }
