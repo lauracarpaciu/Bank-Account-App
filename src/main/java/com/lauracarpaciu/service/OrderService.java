@@ -11,11 +11,11 @@ public interface OrderService {
 
     Order createOrder(List<LineItem> lineItems);
 
-    Boolean addOrderEvent(OrderEvent orderEvent, Boolean validate);
+    Boolean addOrderEvent(OrderEvent orderEvent, Boolean validate) throws Exception;
 
     List<Order> getOrdersForAccount(Account accountNumber);
 
     Order getOrder(String orderId, Boolean validate);
 
-    boolean validateAccountNumber(String accountNumber);
+    boolean validateAccountNumber(Account accountNumber);
 }
