@@ -1,7 +1,4 @@
-package com.lauracarpaciu.service;
-
-
-import com.lauracarpaciu.entities.bankAccount.Operation;
+package com.lauracarpaciu.entities.bankAccount;
 
 import java.io.Serializable;
 import java.util.List;
