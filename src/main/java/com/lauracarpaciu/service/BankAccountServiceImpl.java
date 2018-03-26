@@ -19,7 +19,7 @@ public class BankAccountServiceImpl implements BankAccountService {
     @Override
     public BankAccount getAccount(String code) {
         BankAccount ct = accountRepository.findOne(code);
-        if (ct == null) throw new RuntimeException("Account innexistent");
+        if (ct == null) throw new RuntimeException("Account not found");
         return ct;
     }
 }

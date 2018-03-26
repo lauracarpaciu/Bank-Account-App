@@ -38,7 +38,7 @@ public class OperationServiceImpl implements OperationService {
     @Transactional
     public boolean withdrawal(String accountName, double amount, Long employeeCode) {
         BankAccount ct = bankAccountRepository.findOne(accountName);
-        if (ct.getBalance() < amount) throw new RuntimeException("Sold insuficient");
+        if (ct.getBalance() < amount) throw new RuntimeException("Insufficient sold");
         Employee e = employeeRepository.findOne(employeeCode);
         Operation o = new Withdrawal();
         o.setAmount(amount);

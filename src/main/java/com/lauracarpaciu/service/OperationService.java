@@ -1,5 +1,7 @@
 package com.lauracarpaciu.service;
 
+import com.lauracarpaciu.entities.bankAccount.PageOperation;
+
 public interface OperationService {
 
     boolean pay(String accountName, double amount, Long employeeCode);
