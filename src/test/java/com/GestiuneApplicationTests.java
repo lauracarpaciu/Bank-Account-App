@@ -32,21 +32,22 @@ import static junit.framework.TestCase.assertTrue;
 @SpringBootTest(classes = GestiuneApplication.class)
 public class GestiuneApplicationTests {
     @Autowired
-    CustomerRepository customerRepository;
-    @Autowired
-    EmployeeRepository employeeRepository;
-    @Autowired
-    GroupRepository groupRepository;
-    @Autowired
-    AccountRepository account;
-    @Autowired
-    BankAccountRepository bankAccountRepository;
-    @Autowired
-    OperationRepository operationRepository;
-    @Autowired
-    CategoryRepository categoryRepository;
-    @Autowired
     ProductRepository productRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
+    @Autowired
+    private EmployeeRepository employeeRepository;
+    @Autowired
+    private GroupRepository groupRepository;
+    @Autowired
+    private AccountRepository account;
+    @Autowired
+    private BankAccountRepository bankAccountRepository;
+    @Autowired
+    private OperationRepository operationRepository;
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     private Logger log = LoggerFactory.getLogger(GestiuneApplicationTests.class);
 
     @Test
@@ -59,7 +60,7 @@ public class GestiuneApplicationTests {
 
     @Test
     public void customerTest() {
-        log.info("*** Starting Customer Test");
+        log.info("Customer Test");
 
         Account account = new Account("5", "12345");
         Customer customer = new Customer("Rx224", "Laura", "Carpaciu", "laura.carpaciu@gmail.com", "07255333", account);
