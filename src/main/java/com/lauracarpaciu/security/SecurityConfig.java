@@ -22,10 +22,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         super.configure(auth);
-        /*
+
         auth.inMemoryAuthentication().withUser("admin").password("1234").roles("USER", "ADMIN");
         auth.inMemoryAuthentication().withUser("user").password("1234").roles("USER");
-*/
+
 
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
