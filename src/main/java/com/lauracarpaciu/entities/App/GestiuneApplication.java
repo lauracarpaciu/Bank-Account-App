@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableAutoConfiguration
-@ComponentScan(basePackages="com.lauracarpaciu.entities.App")
+@ComponentScan(basePackages="com.lauracarpaciu")
 @EnableJpaRepositories("com.lauracarpaciu.dao")
 @SpringBootApplication
 @EnableJpaAuditing
