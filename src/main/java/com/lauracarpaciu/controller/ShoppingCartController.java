@@ -15,6 +15,9 @@ import java.util.Optional;
 
 @RestController
 public class ShoppingCartController {
+    /**
+     *
+     */
     @Autowired
     private ShoppingCartService shoppingCartService;
 
@@ -26,8 +29,8 @@ public class ShoppingCartController {
     }
 
     @RequestMapping(path = "/shoppingCart", method = RequestMethod.POST)
-    public ResponseEntity addCartEvent(@RequestBody CartEvent cartEvent,@RequestBody String userName) throws Exception {
-        return Optional.ofNullable(shoppingCartService.addCartEvent(cartEvent,userName))
+    public ResponseEntity addCartEvent(@RequestBody CartEvent cartEvent,@RequestBody Long id) throws Exception {
+        return Optional.ofNullable(shoppingCartService.addCartEvent(cartEvent,id))
                 .map(event -> new ResponseEntity(HttpStatus.NO_CONTENT))
                 .orElseThrow(() -> new Exception("Could not find shopping cart"));
     }

@@ -6,7 +6,9 @@ import com.lauracarpaciu.dao.UserRepository;
 import com.lauracarpaciu.entities.cart.CartEvent;
 import com.lauracarpaciu.entities.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Autowired
@@ -18,8 +20,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
 
     @Override
-    public Boolean addCartEvent(CartEvent cartEvent ,String userName) {
-        User user = userRepository.findOne(Long.valueOf(userName));
+    public Boolean addCartEvent(CartEvent cartEvent ,Long id) {
+        User user = userRepository.findOne(id);
         if (user != null) {
             cartEvent.setUserId(user.getId());
             cartEventRepository.save(cartEvent);
