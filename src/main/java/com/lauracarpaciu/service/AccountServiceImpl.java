@@ -8,8 +8,6 @@ import com.lauracarpaciu.entities.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
 import java.util.List;
 
 @Service
@@ -19,11 +17,16 @@ public class AccountServiceImpl implements AccountService {
     private UserRepository userRepository;
     @Autowired
     private AccountRepository accountRepository;
+    @Override
+    public User getAuthenticatedUser(Long id) {
+        User user = userRepository.findOne(id);
+        return user;
+    }
 
     @Override
-    public List<Account> getUserAccounts(String userName) {
+    public List<Account> getUserAccounts(String userName, Long id) {
         List<Account> account = null;
-        User user = userRepository.findOne(userName);
+        User user = getAuthenticatedUser(id);
         if (user != null) {
             account = accountRepository.findAccountsByUserId(userName);
         }
@@ -37,6 +40,7 @@ public class AccountServiceImpl implements AccountService {
 
         return account;
     }
+
 
 
 
