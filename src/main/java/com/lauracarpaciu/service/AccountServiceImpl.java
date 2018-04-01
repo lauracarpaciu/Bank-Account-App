@@ -17,6 +17,7 @@ public class AccountServiceImpl implements AccountService {
     private UserRepository userRepository;
     @Autowired
     private AccountRepository accountRepository;
+
     @Override
     public User getAuthenticatedUser(Long id) {
         User user = userRepository.findOne(id);
@@ -40,8 +41,6 @@ public class AccountServiceImpl implements AccountService {
 
         return account;
     }
-
-
 
 
 }

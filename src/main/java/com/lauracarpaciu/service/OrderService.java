@@ -11,7 +11,7 @@ public interface OrderService {
 
     Order createOrder(List<LineItem> lineItems);
 
-    Boolean addOrderEvent(OrderEvent orderEvent, Boolean validate) throws Exception;
+    boolean addOrderEvent(OrderEvent orderEvent, Boolean validate, String orderId) throws Exception;
 
     List<Order> getOrdersForAccount(Account accountNumber);
 

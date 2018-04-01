@@ -7,10 +7,12 @@ import com.lauracarpaciu.entities.order.LineItem;
 import com.lauracarpaciu.entities.order.Order;
 import com.lauracarpaciu.entities.order.OrderEvent;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@Service
 public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderRepository orderRepository;
@@ -23,8 +25,8 @@ public class OrderServiceImpl implements OrderService {
         return null;
     }
 
-    public Boolean addOrderEvent(OrderEvent orderEvent, Boolean validate) throws Exception {
-        Order order = orderRepository.findOne(Long.valueOf(orderEvent.getOrderId()));
+    public boolean addOrderEvent(OrderEvent orderEvent, Boolean validate, String orderId) throws Exception {
+        Order order = orderRepository.findOne(Long.valueOf(orderId));
         if (validate) {
             validateAccountNumber(order.getAccount());
         }
@@ -48,7 +50,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order getOrder(String orderId, Boolean validate) {
-     return  null;
+        return null;
     }
 
     @Override

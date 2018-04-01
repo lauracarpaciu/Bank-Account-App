@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface AccountService {
     List<Account> getUserAccounts(String userName, Long id);
-    User getAuthenticatedUser(Long id );
+
+    User getAuthenticatedUser(Long id);
 }

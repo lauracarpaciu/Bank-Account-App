@@ -20,7 +20,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
 
     @Override
-    public Boolean addCartEvent(CartEvent cartEvent ,Long id) {
+    public Boolean addCartEvent(CartEvent cartEvent, Long id) {
         User user = userRepository.findOne(id);
         if (user != null) {
             cartEvent.setUserId(user.getId());
