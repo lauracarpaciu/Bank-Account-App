@@ -13,7 +13,6 @@ import java.util.Collection;
 @Table(name = "orders")
 public class Order extends BaseEntity  {
     @Id
-
     private String orderId;
     private OrderStatus orderStatus;
     @OneToMany(mappedBy = "orders",fetch = FetchType.EAGER)
