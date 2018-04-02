@@ -2,11 +2,8 @@ package com.lauracarpaciu.entities.cart;
 
 import com.lauracarpaciu.entities.order.Order;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.io.Serializable;
-@Entity
-@Table(name="checkoutResult")
+
 public class CheckoutResult implements Serializable{
 
     private String resultMessage;
