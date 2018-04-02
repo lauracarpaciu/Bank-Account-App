@@ -25,12 +25,12 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/orders/{orderId}/events", method = RequestMethod.POST)
-    public ResponseEntity addOrderEvent(@RequestBody OrderEvent orderEvent,
+    public ResponseEntity addOrderEvent(@RequestBody OrderEvent orderEvent,Boolean validate,
                                         @PathVariable("orderId") String orderId) throws Exception {
         assert orderEvent != null;
         assert orderId != null;
         assert !Objects.equals(orderId, orderEvent.getOrderId());
-        return Optional.ofNullable(orderService.addOrderEvent(orderEvent, true))
+        return Optional.ofNullable(orderService.addOrderEvent(orderEvent, true,orderId))
                 .map(a -> new ResponseEntity<>(HttpStatus.NO_CONTENT))
                 .orElseThrow(() -> new Exception("Order event could not be applied to order"));
     }
