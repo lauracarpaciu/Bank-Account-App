@@ -65,7 +65,7 @@ public class Order extends BaseEntity  {
         this.account = account;
     }
 
-    public Order() {
+    public Order(Long createdAt, Long lastModified) {
+        super(createdAt, lastModified);
     }
-
 }

@@ -34,7 +34,7 @@ public class Account extends BaseEntity {
     }
 
     public Account(Long createdAt, Long lastModified, String userId, String accountNumber) {
-        super(createdAt, lastModified);
+        super();
         this.userId = userId;
         this.accountNumber = accountNumber;
     }
@@ -53,6 +53,7 @@ public class Account extends BaseEntity {
     public void setOrders(Collection<Order> orders) {
         this.orders = orders;
     }
+
     public Long getId() {
         return id;
     }
@@ -84,6 +85,7 @@ public class Account extends BaseEntity {
     public void setDefaultAccount(Boolean defaultAccount) {
         this.defaultAccount = defaultAccount;
     }
+
     @JsonIgnore
     @XmlTransient
     public Collection<CreditCard> getCreditCards() {
@@ -93,6 +95,7 @@ public class Account extends BaseEntity {
     public void setCreditCards(Collection<CreditCard> creditCards) {
         this.creditCards = creditCards;
     }
+
     @JsonIgnore
     @XmlTransient
     public Collection<BankAccount> getBankAccounts() {
@@ -102,6 +105,7 @@ public class Account extends BaseEntity {
     public void setBankAccounts(Collection<BankAccount> bankAccounts) {
         this.bankAccounts = bankAccounts;
     }
+
     @JsonIgnore
     @XmlTransient
     public Collection<Address> getAddresses() {

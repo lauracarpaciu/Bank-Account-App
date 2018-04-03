@@ -1,6 +1,8 @@
 package com.lauracarpaciu.entities.address;
 
+import com.lauracarpaciu.entities.account.Account;
 import com.lauracarpaciu.entities.data.BaseEntity;
+
 import javax.persistence.*;
 
 
@@ -18,6 +20,9 @@ public class Address extends BaseEntity {
     private Integer zipCode;
     @Enumerated(EnumType.STRING)
     private AddressType addressType;
+    @ManyToOne
+    @JoinColumn(name = "accountId")
+    private Account account;
 
     public Long getId() {
         return id;
@@ -75,15 +80,26 @@ public class Address extends BaseEntity {
         this.addressType = addressType;
     }
 
-    public Address(String street1, String street2, String city, String country, Integer zipCode, AddressType addressType) {
+    public Address( String street1, String street2, String city, String country, Integer zipCode, AddressType addressType, Account account) {
+
         this.street1 = street1;
         this.street2 = street2;
         this.city = city;
         this.country = country;
         this.zipCode = zipCode;
         this.addressType = addressType;
+        this.account = account;
     }
 
-    public Address() {
+    public Address(Long createdAt, Long lastModified) {
+        super(createdAt, lastModified);
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

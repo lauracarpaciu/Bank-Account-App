@@ -1,14 +1,13 @@
 package com.lauracarpaciu.entities.cart;
 
 import com.lauracarpaciu.entities.data.BaseEntity;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="cart_events",indexes = { @Index(name = "IDX_CART_EVENT_USER", columnList = "id,userId") })
 public class CartEvent extends BaseEntity{
-    @Id@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Enumerated(EnumType.STRING)
     private CartEventType cartEventType;
@@ -20,12 +19,14 @@ public class CartEvent extends BaseEntity{
         super();
     }
 
-    public CartEvent(CartEventType cartEventType, Long userId) {
+    public CartEvent(Long createdAt, Long lastModified, CartEventType cartEventType, Long userId) {
+        super(createdAt, lastModified);
         this.cartEventType = cartEventType;
         this.userId = userId;
     }
 
-    public CartEvent(CartEventType cartEventType, Long userId, String productId, Integer quantity) {
+    public CartEvent(Long createdAt, Long lastModified, CartEventType cartEventType, Long userId, String productId, Integer quantity) {
+        super(createdAt, lastModified);
         this.cartEventType = cartEventType;
         this.userId = userId;
         this.productId = productId;
