@@ -15,7 +15,7 @@ public class Order extends BaseEntity  {
     @Id
     private String orderId;
     private OrderStatus orderStatus;
-    @OneToMany(mappedBy = "orders",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "order",fetch = FetchType.LAZY)
     private Collection<LineItem> lineItems;
     @ManyToOne
     @JoinColumn(name = "addressId")

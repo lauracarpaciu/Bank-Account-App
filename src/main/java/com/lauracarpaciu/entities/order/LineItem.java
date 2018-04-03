@@ -6,7 +6,8 @@ import com.lauracarpaciu.entities.product.Product;
 
 import javax.persistence.*;
 
-
+@Entity
+@Table(name = "line_items")
 public class LineItem  extends BaseEntity  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -4,15 +4,15 @@ import com.lauracarpaciu.entities.data.BaseEntity;
 import com.lauracarpaciu.entities.product.Product;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "line-items")
 public class LineItem extends BaseEntity  {
     @Id
+    @Column(name = "productId", nullable=false)
     private String productId;
     @ManyToOne
-    @JoinColumn(name = "productId")
+    @JoinColumn(name = "productId",insertable=false, updatable=false)
     private Product product;
     private Integer quantity;
 

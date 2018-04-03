@@ -1,14 +1,15 @@
 package com.lauracarpaciu.entities.bankAccount;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.lauracarpaciu.entities.account.Account;
 import com.lauracarpaciu.entities.customer.Customer;
 import com.lauracarpaciu.entities.data.BaseEntity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
@@ -28,6 +29,9 @@ public abstract class BankAccount extends BaseEntity  {
     @ManyToOne
     @JoinColumn(name="employeeId")
     private Employee employee;
+    @ManyToOne
+    @JoinColumn(name = "accountId")
+    private Account account;
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private Collection<Operation> operations;
 
@@ -62,6 +66,15 @@ public abstract class BankAccount extends BaseEntity  {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
     @JsonIgnore
     @XmlTransient
     public Collection<Operation> getOperations() {

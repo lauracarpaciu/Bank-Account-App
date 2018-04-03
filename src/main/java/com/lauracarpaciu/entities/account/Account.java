@@ -21,9 +21,9 @@ public class Account extends BaseEntity {
     private String userId;
     private String accountNumber;
     private Boolean defaultAccount;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private Collection<CreditCard> creditCards;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private Collection<BankAccount> bankAccounts;
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private Collection<Address> addresses;
