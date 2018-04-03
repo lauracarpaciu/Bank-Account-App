@@ -72,7 +72,7 @@ public class GestiuneApplicationTests {
                 .add(creditCard);
 
         Address address = new Address("Aleea Poaiana Sibiului", null,
-                "Bucuresti", "Romania", 20500, AddressType.SHIPPING);
+                "Bucuresti", "Romania", 20500, AddressType.SHIPPING, account);
 
         customer.getAccount()
                 .getAddresses()
