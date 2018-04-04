@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Table(name = "credit-cards")
 public class CreditCard extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String number;
     @ManyToOne

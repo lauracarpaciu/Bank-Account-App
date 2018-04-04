@@ -4,14 +4,13 @@ import com.lauracarpaciu.entities.account.Account;
 import com.lauracarpaciu.entities.data.BaseEntity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 
 @Entity
 @Table(name = "customers")
 public class Customer extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String identityCard;
     private String firstName;

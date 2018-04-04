@@ -1,19 +1,15 @@
 package com.lauracarpaciu.entities.bankAccount;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSetter;
 import com.lauracarpaciu.entities.data.BaseEntity;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlTransient;
-import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
 @Table(name = "employees")
 public class Employee extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long employeeCode;
     private String employeeName;
     @ManyToOne

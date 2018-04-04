@@ -5,14 +5,13 @@ import com.lauracarpaciu.entities.data.BaseEntity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
 @Table(name = "groups")
 public class Group extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long groupNumber;
     private String groupName;
     @ManyToMany

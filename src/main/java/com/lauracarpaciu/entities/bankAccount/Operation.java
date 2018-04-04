@@ -6,11 +6,8 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.lauracarpaciu.entities.data.BaseEntity;
 
-
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -21,7 +18,7 @@ import java.util.Date;
         @JsonSubTypes.Type(name = "R", value = Withdrawal.class)})
 public abstract class Operation extends BaseEntity  {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long operationNumber;
     private double amount;
     @ManyToOne

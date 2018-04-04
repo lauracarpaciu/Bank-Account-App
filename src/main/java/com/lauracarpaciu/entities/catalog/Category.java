@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lauracarpaciu.entities.data.BaseEntity;
 import com.lauracarpaciu.entities.product.Product;
 import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.Serializable;
 import java.util.Collection;
 
 
@@ -15,7 +15,7 @@ import java.util.Collection;
 @Table(name = "categories")
 public class Category extends BaseEntity{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long categoryId;
     @NotEmpty
     @Size(min = 4, max = 20)

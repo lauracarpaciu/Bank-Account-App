@@ -3,6 +3,7 @@ package com.lauracarpaciu.entities.product;
 import com.lauracarpaciu.entities.catalog.Category;
 import com.lauracarpaciu.entities.data.BaseEntity;
 import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
@@ -12,7 +13,7 @@ import javax.validation.constraints.Size;
 @Table(name = "products")
 public class Product extends BaseEntity  {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long productId;
     @NotEmpty
     @Size(min = 4, max = 15)

@@ -5,7 +5,6 @@ import com.lauracarpaciu.entities.data.BaseEntity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.Serializable;
 import java.util.Collection;
 
 
@@ -13,7 +12,7 @@ import java.util.Collection;
 @Table(name = "users")
 public class User extends BaseEntity  {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Long id;
     @Column(name = "user_name")

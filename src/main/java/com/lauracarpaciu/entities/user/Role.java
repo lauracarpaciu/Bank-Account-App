@@ -7,7 +7,7 @@ import java.io.Serializable;
 @Table(name = "roles")
 public class Role implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idRole;
     private String nameRole;
     @ManyToOne

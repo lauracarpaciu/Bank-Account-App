@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Table(name = "line_items")
 public class LineItem  extends BaseEntity  {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
     @JoinColumn(name = "productId")
