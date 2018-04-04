@@ -116,5 +116,11 @@ public class Account extends BaseEntity {
         this.addresses = addresses;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id + ", accountNumber='" + accountNumber + '\'' + ", creditCards=" + creditCards + ", addresses=" + addresses + "} " + super.toString();
+    }
+
 
 }

@@ -10,7 +10,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "users")
-public class User extends BaseEntity  {
+public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
@@ -84,6 +84,7 @@ public class User extends BaseEntity  {
     public void setActived(boolean actived) {
         this.actived = actived;
     }
+
     @JsonIgnore
     @XmlTransient
     public Collection<Role> getRoles() {
@@ -92,5 +93,15 @@ public class User extends BaseEntity  {
 
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + userName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }

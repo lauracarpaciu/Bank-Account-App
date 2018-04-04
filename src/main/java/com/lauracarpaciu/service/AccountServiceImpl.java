@@ -36,7 +36,7 @@ public class AccountServiceImpl implements AccountService {
             account.forEach(acct -> acct.getCreditCards()
                     .forEach(card ->
                             card.setNumber(card.getNumber()
-                                    .replaceAll("([\\d]{4})(?!$)", "****-"))));
+                                    .replaceAll("([\\d]{6})(?!$)", "******-"))));
         }
 
         return account;

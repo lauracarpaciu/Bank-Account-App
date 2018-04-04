@@ -18,15 +18,15 @@ public class Customer extends BaseEntity {
     private String email;
     private String tel;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="accountId")
+    @JoinColumn(name = "accountId")
     private Account account;
 
     public Customer() {
     }
 
-    public Customer(Long createdAt, Long lastModified,String identityCard, String firstName, String lastName, String email, String tel, Account account) {
+    public Customer(Long createdAt, Long lastModified, String identityCard, String firstName, String lastName, String email, String tel, Account account) {
         super(createdAt, lastModified);
-        this.identityCard=identityCard;
+        this.identityCard = identityCard;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -99,5 +99,16 @@ public class Customer extends BaseEntity {
 
     public void setTel(String tel) {
         this.tel = tel;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", account=" + account +
+                "} " + super.toString();
     }
 }

@@ -8,10 +8,9 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 
-
 @Entity
 @Table(name = "products")
-public class Product extends BaseEntity  {
+public class Product extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long productId;
@@ -33,6 +32,26 @@ public class Product extends BaseEntity  {
 
     }
 
+    public Product(Long createdAt, Long lastModified, String designation, String description, double unitPrice, boolean selected, String photo, int quantity) {
+        super(createdAt, lastModified);
+        this.designation = designation;
+        this.description = description;
+        this.unitPrice = unitPrice;
+        this.selected = selected;
+        this.photo = photo;
+        this.quantity = quantity;
+    }
+
+    public Product(String designation, String description, double unitPrice, boolean selected, String photo, int quantity, Category category) {
+        this.designation = designation;
+        this.description = description;
+        this.unitPrice = unitPrice;
+        this.selected = selected;
+        this.photo = photo;
+        this.quantity = quantity;
+        this.category = category;
+    }
+
     public Boolean getInStock() {
         return inStock;
     }
@@ -48,6 +67,7 @@ public class Product extends BaseEntity  {
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
+
     public Long getProductId() {
         return productId;
     }
@@ -71,6 +91,7 @@ public class Product extends BaseEntity  {
     public void setDescription(String description) {
         this.description = description;
     }
+
     public boolean isSelected() {
         return selected;
     }
@@ -103,23 +124,14 @@ public class Product extends BaseEntity  {
         this.category = category;
     }
 
-    public Product(Long createdAt, Long lastModified, String designation, String description, double unitPrice, boolean selected, String photo, int quantity) {
-        super(createdAt, lastModified);
-        this.designation = designation;
-        this.description = description;
-        this.unitPrice = unitPrice;
-        this.selected = selected;
-        this.photo = photo;
-        this.quantity = quantity;
-    }
-
-    public Product(String designation, String description, double unitPrice, boolean selected, String photo, int quantity, Category category) {
-        this.designation = designation;
-        this.description = description;
-        this.unitPrice = unitPrice;
-        this.selected = selected;
-        this.photo = photo;
-        this.quantity = quantity;
-        this.category = category;
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + productId +
+                ", name='" + designation + '\'' +
+                ", productId='" + productId + '\'' +
+                ", description='" + description + '\'' +
+                ", unitPrice=" + unitPrice +
+                '}';
     }
 }

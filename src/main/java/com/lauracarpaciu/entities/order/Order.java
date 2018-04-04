@@ -68,4 +68,15 @@ public class Order extends BaseEntity  {
     public Order(Long createdAt, Long lastModified) {
         super(createdAt, lastModified);
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId='" + orderId + '\'' +
+                ", accountNumber='" + account + '\'' +
+                ", orderStatus=" + orderStatus +
+                ", lineItems=" + lineItems +
+                ", shippingAddress=" + shippingAddress +
+                "} " + super.toString();
+    }
 }

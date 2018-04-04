@@ -13,7 +13,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "categories")
-public class Category extends BaseEntity{
+public class Category extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long categoryId;
@@ -71,6 +71,7 @@ public class Category extends BaseEntity{
     public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
+
     @JsonIgnore
     @XmlTransient
     public Collection<Product> getProducts() {
@@ -88,4 +89,14 @@ public class Category extends BaseEntity{
     public void setPhotoName(String photoName) {
         this.photoName = photoName;
     }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + categoryId +
+                ", products=" + products +
+                ", name='" + categoryName + '\'' +
+                '}';
+    }
+
 }

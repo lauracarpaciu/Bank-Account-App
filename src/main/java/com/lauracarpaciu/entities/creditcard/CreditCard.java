@@ -28,6 +28,16 @@ public class CreditCard extends BaseEntity {
     public CreditCard(String number, CurrentAccount bankAccount, CreditCardType type) {
     }
 
+    public CreditCard() {
+    }
+
+    public CreditCard(Long createdAt, Long lastModified, String number, CurrentAccount currentAccount, CreditCardType type) {
+        super(createdAt, lastModified);
+        this.number = number;
+        this.currentAccount = currentAccount;
+        this.type = type;
+    }
+
     public Long getId() {
         return id;
     }
@@ -68,13 +78,12 @@ public class CreditCard extends BaseEntity {
         this.account = account;
     }
 
-    public CreditCard() {
-    }
-
-    public CreditCard(Long createdAt, Long lastModified, String number, CurrentAccount currentAccount, CreditCardType type) {
-        super(createdAt, lastModified);
-        this.number = number;
-        this.currentAccount = currentAccount;
-        this.type = type;
+    @Override
+    public String toString() {
+        return "CreditCard{" +
+                "id=" + id +
+                ", number='" + number.replaceAll("([\\d]{6})(?!$)", "******-") + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

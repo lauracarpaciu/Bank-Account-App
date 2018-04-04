@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "line_items")
-public class LineItem  extends BaseEntity  {
+public class LineItem extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -16,7 +16,7 @@ public class LineItem  extends BaseEntity  {
     @JoinColumn(name = "productId")
     private Product product;
     private int quantity;
-    private double price,tax;
+    private double price, tax;
     @ManyToOne
     @JoinColumn(name = "orderId")
     private Order order;
@@ -87,5 +87,16 @@ public class LineItem  extends BaseEntity  {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+
+    @Override
+    public String toString() {
+        return "LineItem{" +
+                ", productId='" + product + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", tax=" + tax +
+                '}';
     }
 }

@@ -50,4 +50,12 @@ public class LineItem extends BaseEntity  {
         this.product = product;
         this.quantity = quantity;
     }
+    @Override
+    public String toString() {
+        return "LineItem{" +
+                "productId='" + productId + '\'' +
+                ", product=" + product +
+                ", quantity=" + quantity +
+                '}';
+    }
 }

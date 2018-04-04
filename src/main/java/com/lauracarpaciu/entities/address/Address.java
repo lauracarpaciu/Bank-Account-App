@@ -24,6 +24,21 @@ public class Address extends BaseEntity {
     @JoinColumn(name = "accountId")
     private Account account;
 
+    public Address(String street1, String street2, String city, String country, Integer zipCode, AddressType addressType, Account account) {
+
+        this.street1 = street1;
+        this.street2 = street2;
+        this.city = city;
+        this.country = country;
+        this.zipCode = zipCode;
+        this.addressType = addressType;
+        this.account = account;
+    }
+
+    public Address(Long createdAt, Long lastModified) {
+        super(createdAt, lastModified);
+    }
+
     public Long getId() {
         return id;
     }
@@ -80,26 +95,24 @@ public class Address extends BaseEntity {
         this.addressType = addressType;
     }
 
-    public Address( String street1, String street2, String city, String country, Integer zipCode, AddressType addressType, Account account) {
-
-        this.street1 = street1;
-        this.street2 = street2;
-        this.city = city;
-        this.country = country;
-        this.zipCode = zipCode;
-        this.addressType = addressType;
-        this.account = account;
-    }
-
-    public Address(Long createdAt, Long lastModified) {
-        super(createdAt, lastModified);
-    }
-
     public Account getAccount() {
         return account;
     }
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", street1='" + street1 + '\'' +
+                ", street2='" + street2 + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", addressType='" + addressType + '\'' +
+                ", zipCode=" + zipCode +
+                '}';
     }
 }

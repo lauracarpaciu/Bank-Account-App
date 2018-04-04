@@ -72,4 +72,5 @@ public class CartEvent extends BaseEntity{
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
 }
