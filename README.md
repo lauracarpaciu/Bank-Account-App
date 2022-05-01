@@ -6,7 +6,7 @@ The shopping cart service manages the products that a user has chosen to add to 
 
 The app is structured on the following modules:
 
-    controller module: 
+  controller module: 
 - a key difference between a traditional MVC controller and the RESTful web service controller is the way that the HTTP response body is created. Rather than relying on a view technology to perform server-side rendering of the data to HTML, this RESTful web service controller populates and returns an object. The object data will be written directly to the HTTP response as JSON.
 This code uses Spring @RestController annotation, which marks the class as a controller where every method returns a domain object instead of a view. It is shorthand for including both @Controller and @ResponseBody.
 
