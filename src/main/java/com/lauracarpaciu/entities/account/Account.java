@@ -45,7 +45,6 @@ public class Account extends BaseEntity {
     }
 
     @JsonIgnore
-    @XmlTransient
     public Collection<Order> getOrders() {
         return orders;
     }
@@ -87,7 +86,6 @@ public class Account extends BaseEntity {
     }
 
     @JsonIgnore
-    @XmlTransient
     public Collection<CreditCard> getCreditCards() {
         return creditCards;
     }
@@ -97,7 +95,6 @@ public class Account extends BaseEntity {
     }
 
     @JsonIgnore
-    @XmlTransient
     public Collection<BankAccount> getBankAccounts() {
         return bankAccounts;
     }
@@ -107,7 +104,6 @@ public class Account extends BaseEntity {
     }
 
     @JsonIgnore
-    @XmlTransient
     public Collection<Address> getAddresses() {
         return addresses;
     }
