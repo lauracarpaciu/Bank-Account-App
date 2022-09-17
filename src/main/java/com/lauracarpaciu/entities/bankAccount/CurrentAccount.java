@@ -8,7 +8,11 @@ import javax.xml.bind.annotation.XmlType;
 @DiscriminatorValue("CC")
 @XmlType(name = "CC")
 public class CurrentAccount extends BankAccount {
-    private double discovered;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private double discovered;
     public CurrentAccount() {
         super();
     }

@@ -11,7 +11,11 @@ import java.util.Collection;
 @Entity
 @Table(name = "users")
 public class User extends BaseEntity {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private Long id;

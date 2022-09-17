@@ -7,7 +7,11 @@ import javax.persistence.*;
 @Entity
 @Table(name="cart_events",indexes = { @Index(name = "IDX_CART_EVENT_USER", columnList = "id,userId") })
 public class CartEvent extends BaseEntity{
-    @Id@GeneratedValue(strategy = GenerationType.AUTO)
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Enumerated(EnumType.STRING)
     private CartEventType cartEventType;

@@ -8,7 +8,11 @@ import javax.xml.bind.annotation.XmlType;
 @DiscriminatorValue("SC")
 @XmlType(name = "SC")
 public class SavingAccount extends BankAccount {
-    private double taxes;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private double taxes;
 
     public double getTaxes() {
         return taxes;

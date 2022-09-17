@@ -9,7 +9,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "credit-cards")
 public class CreditCard extends BaseEntity {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String number;

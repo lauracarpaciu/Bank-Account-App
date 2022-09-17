@@ -10,7 +10,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ShoppingCart implements Serializable {
-    private Logger log = Logger.getLogger(String.valueOf(ShoppingCart.class));
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Logger log = Logger.getLogger(String.valueOf(ShoppingCart.class));
     private Map<String, Integer> productMap = new HashMap<>();
     private Collection<LineItem> lineItems = new ArrayList<>();
     private Category category;

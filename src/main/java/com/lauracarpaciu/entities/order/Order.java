@@ -12,7 +12,11 @@ import java.util.Collection;
 @Entity
 @Table(name = "orders")
 public class Order extends BaseEntity  {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     private String orderId;
     private OrderStatus orderStatus;
     @OneToMany(mappedBy = "order",fetch = FetchType.LAZY)

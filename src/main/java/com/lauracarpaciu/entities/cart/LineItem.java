@@ -8,7 +8,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "line-items")
 public class LineItem extends BaseEntity  {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @Column(name = "productId", nullable=false)
     private String productId;
     @ManyToOne

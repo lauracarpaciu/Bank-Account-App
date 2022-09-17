@@ -9,13 +9,16 @@ import com.lauracarpaciu.entities.data.BaseEntity;
 import com.lauracarpaciu.entities.order.Order;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlTransient;
 import java.util.Collection;
 
 @Entity
 @Table(name = "accounts")
 public class Account extends BaseEntity {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String userId;

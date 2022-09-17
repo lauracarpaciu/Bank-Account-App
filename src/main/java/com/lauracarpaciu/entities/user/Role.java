@@ -6,7 +6,11 @@ import java.io.Serializable;
 @Entity
 @Table(name = "roles")
 public class Role implements Serializable {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idRole;
     private String nameRole;

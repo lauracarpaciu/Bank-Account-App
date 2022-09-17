@@ -7,4 +7,9 @@ import javax.persistence.Entity;
 @DiscriminatorValue("R")
 public class Withdrawal extends Operation {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 }

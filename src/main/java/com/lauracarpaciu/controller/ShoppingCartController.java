@@ -22,14 +22,14 @@ public class ShoppingCartController {
     private ShoppingCartService shoppingCartService;
 
     @RequestMapping(path = "/shoppingCart", method = RequestMethod.POST)
-    public ResponseEntity addCartEvent(@RequestBody CartEvent cartEvent,@RequestBody User user) throws Exception {
+    public ResponseEntity<?> addCartEvent(@RequestBody CartEvent cartEvent,@RequestBody User user) throws Exception {
         return Optional.ofNullable(shoppingCartService.addCartEvent(cartEvent,user))
                 .map(event -> new ResponseEntity(HttpStatus.NO_CONTENT))
                 .orElseThrow(() -> new Exception("Could not find shopping cart"));
     }
 
     @RequestMapping(path = "/shoppingCart", method = RequestMethod.POST)
-    public ResponseEntity addCartEvent(@RequestBody CartEvent cartEvent,@RequestBody Long id) throws Exception {
+    public ResponseEntity<?> addCartEvent(@RequestBody CartEvent cartEvent,@RequestBody Long id) throws Exception {
         return Optional.ofNullable(shoppingCartService.addCartEvent(cartEvent,id))
                 .map(event -> new ResponseEntity(HttpStatus.NO_CONTENT))
                 .orElseThrow(() -> new Exception("Could not find shopping cart"));

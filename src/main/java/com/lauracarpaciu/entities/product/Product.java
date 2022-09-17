@@ -11,7 +11,11 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "products")
 public class Product extends BaseEntity {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long productId;
     @NotEmpty

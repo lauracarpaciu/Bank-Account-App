@@ -10,7 +10,11 @@ import javax.persistence.*;
 @Table(name = "addresses")
 public class Address extends BaseEntity {
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String street1;

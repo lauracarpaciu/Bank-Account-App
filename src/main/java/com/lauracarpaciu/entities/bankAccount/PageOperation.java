@@ -5,7 +5,11 @@ import java.util.List;
 
 
 public class PageOperation implements Serializable {
-    private List<Operation> operations;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<Operation> operations;
     private int page;
     private int opetationNumber;
     private int totalOperations;

@@ -14,7 +14,11 @@ import java.util.Collection;
 @Entity
 @Table(name = "categories")
 public class Category extends BaseEntity {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long categoryId;
     @NotEmpty

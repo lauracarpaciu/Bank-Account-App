@@ -19,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/name",method = RequestMethod.GET)
-    public ResponseEntity name(Principal principal) {
+    public ResponseEntity<?> name(Principal principal) {
         User user = null;
         if(principal != null) {
             user = userService.getUserByUsername(principal.getName());

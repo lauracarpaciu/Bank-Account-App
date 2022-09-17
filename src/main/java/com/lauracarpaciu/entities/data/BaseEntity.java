@@ -13,7 +13,12 @@ import java.io.Serializable;
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity implements Serializable {
 
-    @CreatedDate
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@CreatedDate
     private Long createdAt;
 
     @LastModifiedDate

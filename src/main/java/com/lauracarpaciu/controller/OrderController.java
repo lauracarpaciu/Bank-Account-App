@@ -25,7 +25,7 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/orders/{orderId}/events", method = RequestMethod.POST)
-    public ResponseEntity addOrderEvent(@RequestBody OrderEvent orderEvent,Boolean validate,
+    public ResponseEntity<?> addOrderEvent(@RequestBody OrderEvent orderEvent,Boolean validate,
                                         @PathVariable("orderId") String orderId) throws Exception {
         assert orderEvent != null;
         assert orderId != null;
@@ -36,7 +36,7 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/orders/{orderId}",method = RequestMethod.GET)
-    public ResponseEntity getOrder(@PathVariable("orderId") String orderId) throws Exception {
+    public ResponseEntity<?> getOrder(@PathVariable("orderId") String orderId) throws Exception {
         assert orderId != null;
         return Optional.ofNullable(orderService.getOrder(orderId, true))
                 .map(a -> new ResponseEntity<Order>(a, HttpStatus.OK))

@@ -7,5 +7,10 @@ import javax.persistence.Entity;
 @DiscriminatorValue("P")
 public class Payment extends Operation {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 }

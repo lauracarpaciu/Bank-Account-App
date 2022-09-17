@@ -26,7 +26,7 @@ public class EmployeeController {
 
 
     @RequestMapping(value = "/employees", method = RequestMethod.GET)
-    public ResponseEntity listEmployees() throws Exception {
+    public ResponseEntity<?> listEmployees() throws Exception {
         return Optional.ofNullable(employeeService.listEmployees())
                 .map(a -> new ResponseEntity<List<Employee>>(a, HttpStatus.OK))
                 .orElseThrow(() -> new Exception("Not found"));

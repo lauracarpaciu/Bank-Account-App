@@ -19,7 +19,7 @@ public class OperationController {
     private OperationService operationService;
 
     @RequestMapping(value = "/operations", method = RequestMethod.GET)
-    public ResponseEntity getOperationService(@RequestParam String codCont, @RequestParam int page, @RequestParam int size) throws Exception {
+    public ResponseEntity <?>getOperationService(@RequestParam String codCont, @RequestParam int page, @RequestParam int size) throws Exception {
         return Optional.ofNullable(operationService.getOperation(codCont, page, size))
                 .map(a -> new ResponseEntity<PageOperation>(a, HttpStatus.OK))
                 .orElseThrow(() -> new Exception("Not found"));
@@ -27,7 +27,7 @@ public class OperationController {
 
 
     @RequestMapping(value = "/payment", method = RequestMethod.PUT)
-    public ResponseEntity pay(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) throws Exception {
+    public ResponseEntity<?> pay(@RequestParam String code, @RequestParam double amount, @RequestParam Long employeeCode) throws Exception {
         return Optional.ofNullable(operationService.pay(code, amount, employeeCode)).map(a -> new ResponseEntity<>(a, HttpStatus.OK)).orElseThrow(() -> new Exception("Not found"));
     }
 
@@ -37,7 +37,7 @@ public class OperationController {
     }
 
     @RequestMapping(value = "/virament", method = RequestMethod.PUT)
-    public ResponseEntity virament(@RequestParam String account1, @RequestParam String account2, @RequestParam double amount, @RequestParam Long employeeCode) throws Exception {
+    public ResponseEntity<?> virament(@RequestParam String account1, @RequestParam String account2, @RequestParam double amount, @RequestParam Long employeeCode) throws Exception {
         return Optional.ofNullable(operationService.virament(account1, account2, amount, employeeCode)).map(a -> new ResponseEntity<>(a, HttpStatus.OK)).orElseThrow(() -> new Exception("Not found"));
     }
 }

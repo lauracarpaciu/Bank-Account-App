@@ -17,7 +17,11 @@ import java.util.Date;
 @JsonSubTypes({@JsonSubTypes.Type(name = "V", value = Payment.class),
         @JsonSubTypes.Type(name = "R", value = Withdrawal.class)})
 public abstract class Operation extends BaseEntity  {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long operationNumber;
     private double amount;

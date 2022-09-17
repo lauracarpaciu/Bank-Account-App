@@ -8,7 +8,11 @@ import java.util.Collection;
 @Entity
 @Table(name = "employees")
 public class Employee extends BaseEntity {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long employeeCode;
     private String employeeName;

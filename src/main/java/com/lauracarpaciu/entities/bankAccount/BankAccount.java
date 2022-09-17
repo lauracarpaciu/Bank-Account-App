@@ -20,7 +20,11 @@ import java.util.Collection;
 @JsonSubTypes({@JsonSubTypes.Type(name = "CC", value = CurrentAccount.class), @JsonSubTypes.Type(name = "SC", value = SavingAccount.class)})
 @XmlSeeAlso({CurrentAccount.class, SavingAccount.class})
 public abstract class BankAccount extends BaseEntity  {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     private String accountName;
     private double balance;
     @ManyToOne

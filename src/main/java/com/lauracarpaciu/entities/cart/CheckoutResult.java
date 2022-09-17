@@ -6,7 +6,11 @@ import java.io.Serializable;
 
 public class CheckoutResult implements Serializable{
 
-    private String resultMessage;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String resultMessage;
     private Order order;
 
     public CheckoutResult() {

@@ -10,7 +10,11 @@ import java.util.Collection;
 @Entity
 @Table(name = "groups")
 public class Group extends BaseEntity {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long groupNumber;
     private String groupName;

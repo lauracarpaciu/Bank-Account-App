@@ -9,7 +9,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "orderEvents")
 public class OrderEvent extends BaseEntity {
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     private String id;
     private OrderEventType type;
     private String orderId;
