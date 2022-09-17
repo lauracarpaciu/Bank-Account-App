@@ -14,11 +14,15 @@ import java.util.Optional;
 
 @RestController
 public class BankAccountController {
+  
+    private final BankAccountService bankAccountService;
+
     @Autowired
-    private BankAccountService bankAccountService;
-
-
-    public BankAccount saveAccount(BankAccount ct) {
+    public BankAccountController(BankAccountService bankAccountService) {
+		super();
+		this.bankAccountService = bankAccountService;
+	}
+	public BankAccount saveAccount(BankAccount ct) {
         return bankAccountService.saveAccount(ct);
     }
     @RequestMapping(path = "/bankaccounts/{code}", method = RequestMethod.GET, name = "getAccount")

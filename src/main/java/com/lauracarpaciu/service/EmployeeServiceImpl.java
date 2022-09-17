@@ -9,10 +9,15 @@ import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
+ 
+    private final EmployeeRepository employeeRepository;
     @Autowired
-    private EmployeeRepository employeeRepository;
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+		super();
+		this.employeeRepository = employeeRepository;
+	}
 
-    @Override
+	@Override
     public Employee saveEmployee(Employee e) {
         return employeeRepository.save(e);
     }

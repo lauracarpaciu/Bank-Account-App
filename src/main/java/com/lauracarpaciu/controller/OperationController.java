@@ -15,10 +15,16 @@ import java.util.Optional;
 @RestController
 public class OperationController {
 
+   
+    private final OperationService operationService;
     @Autowired
-    private OperationService operationService;
+    public OperationController(OperationService operationService) {
+		super();
+		this.operationService = operationService;
+	}
 
-    @RequestMapping(value = "/operations", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/operations", method = RequestMethod.GET)
     public ResponseEntity <?>getOperationService(@RequestParam String codCont, @RequestParam int page, @RequestParam int size) throws Exception {
         return Optional.ofNullable(operationService.getOperation(codCont, page, size))
                 .map(a -> new ResponseEntity<PageOperation>(a, HttpStatus.OK))

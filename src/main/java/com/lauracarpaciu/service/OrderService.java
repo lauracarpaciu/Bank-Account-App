@@ -7,6 +7,8 @@ import com.lauracarpaciu.entities.order.OrderEvent;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+@Service
 public interface OrderService {
 
     Order createOrder(List<LineItem> lineItems);

@@ -15,10 +15,15 @@ import java.util.Optional;
 @RestController
 @RequestMapping(path = "/users")
 public class UserController {
+    
+    private final UserService userService;
     @Autowired
-    private UserService userService;
+    public UserController(UserService userService) {
+		super();
+		this.userService = userService;
+	}
 
-    @RequestMapping(value = "/name",method = RequestMethod.GET)
+	@RequestMapping(value = "/name",method = RequestMethod.GET)
     public ResponseEntity<?> name(Principal principal) {
         User user = null;
         if(principal != null) {

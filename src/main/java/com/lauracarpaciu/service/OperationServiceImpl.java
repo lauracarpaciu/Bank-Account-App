@@ -12,14 +12,22 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class OperationServiceImpl implements OperationService {
+   
+    private final OperationRepository operationRepository;
+  
+    private final BankAccountRepository bankAccountRepository;
+ 
+    private final EmployeeRepository employeeRepository;
     @Autowired
-    private OperationRepository operationRepository;
-    @Autowired
-    private BankAccountRepository bankAccountRepository;
-    @Autowired
-    private EmployeeRepository employeeRepository;
+    public OperationServiceImpl(OperationRepository operationRepository, BankAccountRepository bankAccountRepository,
+			EmployeeRepository employeeRepository) {
+		super();
+		this.operationRepository = operationRepository;
+		this.bankAccountRepository = bankAccountRepository;
+		this.employeeRepository = employeeRepository;
+	}
 
-    @Override
+	@Override
     @Transactional
     public boolean pay(String accountName, double amount, Long employeeCode) {
         BankAccount ct = bankAccountRepository.findOne(accountName);

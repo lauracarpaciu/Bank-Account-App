@@ -7,10 +7,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BankAccountServiceImpl implements BankAccountService {
+ 
+    private final BankAccountRepository accountRepository;
     @Autowired
-    private BankAccountRepository accountRepository;
+    public BankAccountServiceImpl(BankAccountRepository accountRepository) {
+		super();
+		this.accountRepository = accountRepository;
+	}
 
-    @Override
+	@Override
     public BankAccount saveAccount(BankAccount ct) {
 
         return accountRepository.save(ct);

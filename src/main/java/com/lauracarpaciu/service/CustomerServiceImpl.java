@@ -10,10 +10,16 @@ import java.util.List;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
+    
+    private final CustomerRepository customerRepository;
     @Autowired
-    private CustomerRepository customerRepository;
+    public CustomerServiceImpl(CustomerRepository customerRepository) {
+		super();
+		this.customerRepository = customerRepository;
+	}
 
-    @Override
+
+	@Override
     public Customer saveCustomer(Customer c) {
         return customerRepository.save(c);
     }

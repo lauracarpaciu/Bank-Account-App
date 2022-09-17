@@ -15,10 +15,14 @@ import java.util.Optional;
 @RestController
 public class AccountController {
 
+    private final AccountService accountService;
     @Autowired
-    private AccountService accountService;
+    public AccountController(AccountService accountService) {
+		super();
+		this.accountService = accountService;
+	}
 
-    @RequestMapping(value = "/accounts", method = RequestMethod.GET)
+	@RequestMapping(value = "/accounts", method = RequestMethod.GET)
     public ResponseEntity<?> getUserAccount(String userName, Long id) throws Exception {
         return Optional.ofNullable(accountService.getUserAccounts(userName,id))
                 .map(a -> new ResponseEntity<List<Account>>(a, HttpStatus.OK))

@@ -14,13 +14,19 @@ import java.util.stream.Collectors;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-    @Autowired
-    private OrderRepository orderRepository;
-    @Autowired
-    private OrderEventRepository orderEventRepository;
+  
+    private final OrderRepository orderRepository;
 
+    private final OrderEventRepository orderEventRepository;
 
-    @Override
+    @Autowired
+    public OrderServiceImpl(OrderRepository orderRepository, OrderEventRepository orderEventRepository) {
+		super();
+		this.orderRepository = orderRepository;
+		this.orderEventRepository = orderEventRepository;
+	}
+
+	@Override
     public Order createOrder(List<LineItem> lineItems) {
         return null;
     }

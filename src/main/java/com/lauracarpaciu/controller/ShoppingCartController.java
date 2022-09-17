@@ -18,10 +18,15 @@ public class ShoppingCartController {
     /**
      *
      */
+    
+    private final ShoppingCartService shoppingCartService;
     @Autowired
-    private ShoppingCartService shoppingCartService;
+    public ShoppingCartController(ShoppingCartService shoppingCartService) {
+		super();
+		this.shoppingCartService = shoppingCartService;
+	}
 
-    @RequestMapping(path = "/shoppingCart", method = RequestMethod.POST)
+	@RequestMapping(path = "/shoppingCart", method = RequestMethod.POST)
     public ResponseEntity<?> addCartEvent(@RequestBody CartEvent cartEvent,@RequestBody User user) throws Exception {
         return Optional.ofNullable(shoppingCartService.addCartEvent(cartEvent,user))
                 .map(event -> new ResponseEntity(HttpStatus.NO_CONTENT))

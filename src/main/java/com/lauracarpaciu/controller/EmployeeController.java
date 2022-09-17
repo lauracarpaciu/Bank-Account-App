@@ -14,10 +14,16 @@ import java.util.Optional;
 
 @RestController
 public class EmployeeController {
+  
+    private final EmployeeService employeeService;
     @Autowired
-    private EmployeeService employeeService;
+    public EmployeeController(EmployeeService employeeService) {
+		super();
+		this.employeeService = employeeService;
+	}
 
-    @RequestMapping(value = "/employes", method = RequestMethod.POST)
+
+	@RequestMapping(value = "/employes", method = RequestMethod.POST)
     public ResponseEntity<Employee> saveEmployee(Employee e) throws Exception {
         return Optional.ofNullable(employeeService.saveEmployee(e))
                 .map(a -> new ResponseEntity<Employee>(a, HttpStatus.OK))

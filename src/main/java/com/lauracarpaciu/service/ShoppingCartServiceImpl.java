@@ -11,15 +11,23 @@ import org.springframework.stereotype.Service;
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
 
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private CartEventRepository cartEventRepository;
-    @Autowired
-    private CategoryRepository categoryRepository;
+  
+    private final UserRepository userRepository;
 
+    private final CartEventRepository cartEventRepository;
 
-    @Override
+    private final CategoryRepository categoryRepository;
+
+    @Autowired
+    public ShoppingCartServiceImpl(UserRepository userRepository, CartEventRepository cartEventRepository,
+			CategoryRepository categoryRepository) {
+		super();
+		this.userRepository = userRepository;
+		this.cartEventRepository = cartEventRepository;
+		this.categoryRepository = categoryRepository;
+	}
+
+	@Override
     public Boolean addCartEvent(CartEvent cartEvent, Long id) {
         User user = userRepository.findOne(id);
         if (user != null) {

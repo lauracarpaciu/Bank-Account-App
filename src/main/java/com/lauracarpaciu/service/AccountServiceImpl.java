@@ -13,10 +13,16 @@ import java.util.List;
 @Service
 public class AccountServiceImpl implements AccountService {
 
+ 
+    private final UserRepository userRepository;
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private AccountRepository accountRepository;
+    public AccountServiceImpl(UserRepository userRepository, AccountRepository accountRepository) {
+		super();
+		this.userRepository = userRepository;
+		this.accountRepository = accountRepository;
+	}
+
+	private AccountRepository accountRepository;
 
     @Override
     public User getAuthenticatedUser(Long id) {

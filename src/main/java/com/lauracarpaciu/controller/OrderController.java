@@ -16,11 +16,16 @@ import java.util.Optional;
 
 @RestController
 public class OrderController {
+  
+    private final OrderService orderService;
+
     @Autowired
-    private OrderService orderService;
+    public OrderController(OrderService orderService) {
+		super();
+		this.orderService = orderService;
+	}
 
-
-    public Order createOrder(List<LineItem> lineItems) {
+	public Order createOrder(List<LineItem> lineItems) {
         return orderService.createOrder(lineItems);
     }
 

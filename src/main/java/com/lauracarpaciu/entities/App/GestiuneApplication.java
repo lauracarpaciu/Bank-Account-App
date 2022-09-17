@@ -7,12 +7,17 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableAsync;
+
+@SpringBootApplication(scanBasePackages = {
+        "com.lauracarpaciu.entities.App"
+})
+@EnableAsync
 @EnableAutoConfiguration
+@EntityScan("com.lauracarpaciu.entities.*")
+@ComponentScan(basePackages = {"com.lauracarpaciu.security", "com.lauracarpaciu.*",})
 @EnableJpaRepositories("com.lauracarpaciu.dao")
-@SpringBootApplication
 @EnableJpaAuditing
-@ComponentScan(basePackages = { "com.lauracarpaciu.*" })
-@EntityScan("com.lauracarpaciu.*")
 public class GestiuneApplication {
 
 	public static void main(String[] args) {
