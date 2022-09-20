@@ -24,7 +24,7 @@ This code uses Spring @RestController annotation, which marks the class as a con
 
 Spring Boot does not generate code or make edits to your files. Instead, when you start your application, Spring Boot dynamically wires up beans and settings and applies them to your application context. 
 
-Framework and dependecies used: Spring boot 1.5.9, Spring security, Spring web, Spring Data Jpa, mysql-connector-java, Hibernate validator, mySQL database.
+Framework and dependecies used:Java SE 8,Maven Spring boot 1.5.9, Spring security, Spring web, Spring Data Jpa, mysql-connector-java, Hibernate validator, mySQL database.
 
 
 
