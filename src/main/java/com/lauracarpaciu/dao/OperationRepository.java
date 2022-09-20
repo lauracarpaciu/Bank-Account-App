@@ -1,7 +1,7 @@
 package com.lauracarpaciu.dao;
 
-import com.lauracarpaciu.entities.bankAccount.BankAccount;
-import com.lauracarpaciu.entities.bankAccount.Operation;
+import com.lauracarpaciu.entity.bankAccount.BankAccount;
+import com.lauracarpaciu.entity.bankAccount.Operation;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

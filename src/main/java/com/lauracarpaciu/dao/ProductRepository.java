@@ -1,7 +1,7 @@
 package com.lauracarpaciu.dao;
 
 
-import com.lauracarpaciu.entities.product.Product;
+import com.lauracarpaciu.entity.product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository

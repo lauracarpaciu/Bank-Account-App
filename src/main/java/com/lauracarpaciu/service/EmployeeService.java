@@ -1,7 +1,7 @@
 package com.lauracarpaciu.service;
 
 
-import com.lauracarpaciu.entities.bankAccount.Employee;
+import com.lauracarpaciu.entity.bankAccount.Employee;
 
 import java.util.List;
 

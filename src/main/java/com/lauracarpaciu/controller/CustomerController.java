@@ -1,6 +1,6 @@
 package com.lauracarpaciu.controller;
 
-import com.lauracarpaciu.entities.customer.Customer;
+import com.lauracarpaciu.entity.customer.Customer;
 import com.lauracarpaciu.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

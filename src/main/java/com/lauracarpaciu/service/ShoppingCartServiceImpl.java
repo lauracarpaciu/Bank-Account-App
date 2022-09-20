@@ -3,8 +3,8 @@ package com.lauracarpaciu.service;
 import com.lauracarpaciu.dao.CartEventRepository;
 import com.lauracarpaciu.dao.CategoryRepository;
 import com.lauracarpaciu.dao.UserRepository;
-import com.lauracarpaciu.entities.cart.CartEvent;
-import com.lauracarpaciu.entities.user.User;
+import com.lauracarpaciu.entity.cart.CartEvent;
+import com.lauracarpaciu.entity.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

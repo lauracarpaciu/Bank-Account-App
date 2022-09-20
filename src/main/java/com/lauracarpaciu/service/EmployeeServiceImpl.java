@@ -1,7 +1,7 @@
 package com.lauracarpaciu.service;
 
 import com.lauracarpaciu.dao.EmployeeRepository;
-import com.lauracarpaciu.entities.bankAccount.Employee;
+import com.lauracarpaciu.entity.bankAccount.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

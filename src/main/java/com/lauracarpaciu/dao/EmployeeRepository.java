@@ -1,6 +1,6 @@
 package com.lauracarpaciu.dao;
 
-import com.lauracarpaciu.entities.bankAccount.Employee;
+import com.lauracarpaciu.entity.bankAccount.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository

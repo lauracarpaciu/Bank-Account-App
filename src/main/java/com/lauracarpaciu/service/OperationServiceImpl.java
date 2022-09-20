@@ -3,7 +3,7 @@ package com.lauracarpaciu.service;
 import com.lauracarpaciu.dao.BankAccountRepository;
 import com.lauracarpaciu.dao.EmployeeRepository;
 import com.lauracarpaciu.dao.OperationRepository;
-import com.lauracarpaciu.entities.bankAccount.*;
+import com.lauracarpaciu.entity.bankAccount.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

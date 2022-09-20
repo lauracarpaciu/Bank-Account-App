@@ -1,6 +1,6 @@
 package com.lauracarpaciu.dao;
 
-import com.lauracarpaciu.entities.user.User;
+import com.lauracarpaciu.entity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

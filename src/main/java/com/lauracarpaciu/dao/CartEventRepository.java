@@ -1,6 +1,6 @@
 package com.lauracarpaciu.dao;
 
-import com.lauracarpaciu.entities.cart.CartEvent;
+import com.lauracarpaciu.entity.cart.CartEvent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,9 @@
 package com.lauracarpaciu.service;
 
-import com.lauracarpaciu.entities.account.Account;
-import com.lauracarpaciu.entities.order.LineItem;
-import com.lauracarpaciu.entities.order.Order;
-import com.lauracarpaciu.entities.order.OrderEvent;
+import com.lauracarpaciu.entity.account.Account;
+import com.lauracarpaciu.entity.order.LineItem;
+import com.lauracarpaciu.entity.order.Order;
+import com.lauracarpaciu.entity.order.OrderEvent;
 
 import java.util.List;
 

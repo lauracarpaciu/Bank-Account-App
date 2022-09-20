@@ -2,8 +2,8 @@ package com.lauracarpaciu.service;
 
 import org.springframework.stereotype.Service;
 
-import com.lauracarpaciu.entities.cart.CartEvent;
-import com.lauracarpaciu.entities.user.User;
+import com.lauracarpaciu.entity.cart.CartEvent;
+import com.lauracarpaciu.entity.user.User;
 @Service
 public interface ShoppingCartService {
     Boolean addCartEvent(CartEvent cartEvent, Long id);

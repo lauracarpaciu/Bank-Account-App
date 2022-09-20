@@ -1,6 +1,6 @@
 package com.lauracarpaciu.service;
 
-import com.lauracarpaciu.entities.customer.Customer;
+import com.lauracarpaciu.entity.customer.Customer;
 
 import java.util.List;
 

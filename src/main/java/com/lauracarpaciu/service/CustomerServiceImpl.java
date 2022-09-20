@@ -2,7 +2,7 @@ package com.lauracarpaciu.service;
 
 
 import com.lauracarpaciu.dao.CustomerRepository;
-import com.lauracarpaciu.entities.customer.Customer;
+import com.lauracarpaciu.entity.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

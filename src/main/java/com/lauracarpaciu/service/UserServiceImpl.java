@@ -1,7 +1,7 @@
 package com.lauracarpaciu.service;
 
 import com.lauracarpaciu.dao.UserRepository;
-import com.lauracarpaciu.entities.user.User;
+import com.lauracarpaciu.entity.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

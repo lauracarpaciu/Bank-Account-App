@@ -2,16 +2,16 @@ package com;
 
 
 import com.lauracarpaciu.dao.*;
-import com.lauracarpaciu.entities.App.GestiuneApplication;
-import com.lauracarpaciu.entities.account.Account;
-import com.lauracarpaciu.entities.address.Address;
-import com.lauracarpaciu.entities.address.AddressType;
-import com.lauracarpaciu.entities.bankAccount.*;
-import com.lauracarpaciu.entities.catalog.Category;
-import com.lauracarpaciu.entities.creditcard.CreditCard;
-import com.lauracarpaciu.entities.creditcard.CreditCardType;
-import com.lauracarpaciu.entities.customer.Customer;
-import com.lauracarpaciu.entities.product.Product;
+import com.lauracarpaciu.entity.App.GestiuneApplication;
+import com.lauracarpaciu.entity.account.Account;
+import com.lauracarpaciu.entity.address.Address;
+import com.lauracarpaciu.entity.address.AddressType;
+import com.lauracarpaciu.entity.bankAccount.*;
+import com.lauracarpaciu.entity.catalog.Category;
+import com.lauracarpaciu.entity.creditcard.CreditCard;
+import com.lauracarpaciu.entity.creditcard.CreditCardType;
+import com.lauracarpaciu.entity.customer.Customer;
+import com.lauracarpaciu.entity.product.Product;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

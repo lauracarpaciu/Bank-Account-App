@@ -1,6 +1,7 @@
 package com.lauracarpaciu.controller;
+import com.lauracarpaciu.entity.bankAccount.PageOperation;
 
-import com.lauracarpaciu.entities.bankAccount.PageOperation;
+
 import com.lauracarpaciu.service.OperationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
 package com.lauracarpaciu.controller;
 
-import com.lauracarpaciu.entities.cart.CartEvent;
-import com.lauracarpaciu.entities.user.User;
+import com.lauracarpaciu.entity.cart.CartEvent;
+import com.lauracarpaciu.entity.user.User;
 import com.lauracarpaciu.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

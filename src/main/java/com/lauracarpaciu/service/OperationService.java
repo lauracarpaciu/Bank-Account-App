@@ -2,7 +2,7 @@ package com.lauracarpaciu.service;
 
 import org.springframework.stereotype.Service;
 
-import com.lauracarpaciu.entities.bankAccount.PageOperation;
+import com.lauracarpaciu.entity.bankAccount.PageOperation;
 @Service
 public interface OperationService {
 

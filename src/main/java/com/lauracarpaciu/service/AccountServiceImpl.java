@@ -3,8 +3,8 @@ package com.lauracarpaciu.service;
 
 import com.lauracarpaciu.dao.AccountRepository;
 import com.lauracarpaciu.dao.UserRepository;
-import com.lauracarpaciu.entities.account.Account;
-import com.lauracarpaciu.entities.user.User;
+import com.lauracarpaciu.entity.account.Account;
+import com.lauracarpaciu.entity.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,11 +36,11 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public List<Account> getUserAccounts(String userName, Long id) {
+    public List<Account> getUserAccounts(String userId,Long id) {
         List<Account> account = null;
         User user = getAuthenticatedUser(id);
         if (user != null) {
-            account = accountRepository.findAccountsByUserId(userName);
+            account = accountRepository.findAccountsById(userId);
         }
 
         if (account != null) {

@@ -1,6 +1,6 @@
 package com.lauracarpaciu.dao;
 
-import com.lauracarpaciu.entities.order.OrderEvent;
+import com.lauracarpaciu.entity.order.OrderEvent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
