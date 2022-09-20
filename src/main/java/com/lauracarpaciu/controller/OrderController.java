@@ -1,6 +1,5 @@
 package com.lauracarpaciu.controller;
 
-import com.lauracarpaciu.entity.account.Account;
 import com.lauracarpaciu.entity.order.LineItem;
 import com.lauracarpaciu.entity.order.Order;
 import com.lauracarpaciu.entity.order.OrderEvent;
@@ -52,8 +51,8 @@ public class OrderController {
         return orderService.getOrder(orderId, validate);
     }
 
-    public boolean validateAccountNumber(Account accountNumber) {
-        return orderService.validateAccountNumber(accountNumber);
+    public boolean validateAccountNumber(String orderId) {
+        return orderService.validateAccountNumber(orderId);
     }
 
 

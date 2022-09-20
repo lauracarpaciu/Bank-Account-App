@@ -34,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
     public boolean addOrderEvent(OrderEvent orderEvent, Boolean validate, String orderId) throws Exception {
         Order order = orderRepository.findOne(Long.valueOf(orderId));
         if (validate) {
-            validateAccountNumber(order.getAccount());
+            validateAccountNumber(order.getOrderId());
         }
         orderEventRepository.save(orderEvent);
 
@@ -42,11 +42,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getOrdersForAccount(Account accountNumber) {
+    public List<Order> getOrdersForAccount(String orderId) {
         List<Order> orders;
-        validateAccountNumber(accountNumber);
+        validateAccountNumber(orderId);
 
-        orders = orderRepository.findByAccountNumber(accountNumber);
+        orders = orderRepository.findOrderByOrderId(orderId);
 
         return orders.stream()
                 .map(order -> getOrder(order.getOrderId(), true))
@@ -60,7 +60,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean validateAccountNumber(Account accountNumber) {
+    public boolean validateAccountNumber(String orderId) {
         return false;
     }
 }
